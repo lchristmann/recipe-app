@@ -1,0 +1,35 @@
+[
+  {
+      "id": "1",
+      "title": "Pommes Bowl",
+      "ingredients": [
+        "Pommes",
+        "Tomaten",
+        "Spinat",
+        "Limette",
+        "Feta"
+      ],
+      "instructions": [
+        "Kartoffeln im Ofen backen.",
+        "Dann alles in einer Bowl drappieren und würzen."
+      ]
+    },
+    {
+      "id": "2",
+      "title": "Kartoffelgratin",
+      "ingredients": [
+        "Kartoffeln",
+        "Sahne",
+        "Milch",
+        "Käse",
+        "Knoblauch",
+        "Butter"
+      ],
+      "instructions": [
+        "Kartoffeln schälen und in Scheiben schneiden.",
+        "Sahne-Milch-Soße anmischen und mit Käse darüber geben.",
+        "Bei 180° Ober-Unter Hitze oder 160° Umluft goldbraun backen."
+      ]
+    }
+]
+  
