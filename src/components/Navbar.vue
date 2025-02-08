@@ -6,10 +6,18 @@
 
                 <div class="flex h-16 px-2 lg:px-0">
                     <div class="-my-px ml-6 flex space-x-8">
-                        <a href="#" class="inline-flex items-center border-b-2 border-orange-700 px-1 pt-1 text-sm font-medium text-gray-900" aria-current="page">Main</a>
-                        <a href="#" class="inline-flex items-center border-b-2 border-transparent px-1 pt-1 text-sm font-medium text-gray-500 hover:border-gray-300 hover:text-gray-700">Side</a>
-                        <a href="#" class="inline-flex items-center border-b-2 border-transparent px-1 pt-1 text-sm font-medium text-gray-500 hover:border-gray-300 hover:text-gray-700">Supper</a>
-                        <a href="#" class="inline-flex items-center border-b-2 border-transparent px-1 pt-1 text-sm font-medium text-gray-500 hover:border-gray-300 hover:text-gray-700">Dessert</a>
+                        <router-link to="/main"
+                            class="inline-flex items-center border-b-2 border-transparent px-1 pt-1 text-sm font-medium text-gray-500 hover:border-gray-300 hover:text-gray-700"
+                        >Main</router-link>
+                        <router-link to="/side"
+                            class="inline-flex items-center border-b-2 border-transparent px-1 pt-1 text-sm font-medium text-gray-500 hover:border-gray-300 hover:text-gray-700"
+                        >Side</router-link>
+                        <router-link to="/supper"
+                            class="inline-flex items-center border-b-2 border-transparent px-1 pt-1 text-sm font-medium text-gray-500 hover:border-gray-300 hover:text-gray-700"
+                        >Supper</router-link>
+                        <router-link to="/dessert"
+                            class="inline-flex items-center border-b-2 border-transparent px-1 pt-1 text-sm font-medium text-gray-500 hover:border-gray-300 hover:text-gray-700"
+                        >Dessert</router-link>
                     </div>
                 </div>
 
