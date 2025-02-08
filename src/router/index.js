@@ -1,5 +1,6 @@
 import { createRouter, createWebHashHistory } from 'vue-router'
 import Overview from '@/views/Overview.vue'
+import RecipeView from '@/views/RecipeView.vue'
 
 const recipeTypes = ['main', 'side', 'supper', 'dessert']
 
@@ -9,6 +10,11 @@ const routes = [
         path: '/:overview(main|side|supper|dessert)',
         name: 'overview.show',
         component: Overview,
+    },
+    { 
+        path: '/:overview(main|side|supper|dessert)/:id/:slug',
+        name: 'recipe.show',
+        component: RecipeView,
     },
     { path: '/:pathMatch(.*)*', name: 'NotFound', component: () => import('@/views/NotFound.vue') },
 ]

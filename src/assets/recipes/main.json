@@ -1,7 +1,8 @@
 [
   {
-      "id": "1",
+      "id": 1,
       "title": "Pommes Bowl",
+      "slug": "pommes-bowl",
       "ingredients": [
         "Pommes",
         "Tomaten",
@@ -15,8 +16,9 @@
       ]
     },
     {
-      "id": "2",
-      "title": "Kartoffelgratin",
+      "id": 2,
+      "title": "Spagetthi Bolognese",
+      "slug": "spagetthi-bolognese",
       "ingredients": [
         "Kartoffeln",
         "Sahne",
