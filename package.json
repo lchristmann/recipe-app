@@ -4,8 +4,9 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
+    "generate:manifest": "node scripts/generateImagesManifest.js",
     "dev": "vite",
-    "build": "vite build",
+    "build": "npm run generate:manifest && vite build",
     "preview": "vite preview"
   },
   "dependencies": {
