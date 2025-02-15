@@ -11,7 +11,8 @@
     "images:verify": "npm run images:verify:association && npm run images:verify:format",
     "dev": "vite",
     "build": "npm run generate:manifest && vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "test": "vitest"
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.0.3",
@@ -21,6 +22,7 @@
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^5.2.1",
-    "vite": "^6.0.5"
+    "vite": "^6.0.5",
+    "vitest": "^3.0.5"
   }
 }

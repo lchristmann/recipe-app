@@ -7,4 +7,5 @@ export function normalizeRecipeTitle(title) {
         .replace(/ü/g, 'ue')
         .replace(/ß/g, 'ss')
         .replace(/\W+/g, '-') // Replace non-word characters like whitespaces with '-'
+        .replace(/^-+|-+$/g, ''); // Remove leading and trailing hyphens
 }  
