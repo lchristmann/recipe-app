@@ -1,18 +1,18 @@
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
+import { CATEGORIES } from '@/config/constants.js';
 
 // Define __dirname for ES modules
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-// Define categories and base images directory
-const categories = ['main', 'side', 'supper', 'dessert'];
+// Define base images directory
 const imagesBaseDir = path.join(__dirname, '..', 'public', 'images');
 
 let issuesFound = false; // Track if any warnings are printed
 
-categories.forEach((category) => {
+CATEGORIES.forEach((category) => {
 
   const categoryDir = path.join(imagesBaseDir, category);
   let files = [];

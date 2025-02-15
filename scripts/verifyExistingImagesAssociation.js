@@ -2,6 +2,7 @@ import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import { normalizeRecipeTitle } from '../src/utils/stringUtils.js';
+import { CATEGORIES } from '@/config/constants.js';
 
 // This script checks every image file in the public/images folder against the set of expected image names from the recipes in src/assets/recipes/*.json files.
 // It logs a warning if an image isn’t associated with any recipe.
@@ -10,14 +11,13 @@ import { normalizeRecipeTitle } from '../src/utils/stringUtils.js';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-// Define categories and base directories
-const categories = ['main', 'side', 'supper', 'dessert'];
+// Define base directories
 const imagesBaseDir = path.join(__dirname, '..', 'public', 'images');
 const recipesBaseDir = path.join(__dirname, '..', 'src', 'assets', 'recipes');
 
 let issuesFound = false; // Track if any warnings are printed
 
-categories.forEach((category) => {
+CATEGORIES.forEach((category) => {
 
   // Read image files from /public/images/<category>
   const categoryImagesDir = path.join(imagesBaseDir, category);

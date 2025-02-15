@@ -2,6 +2,7 @@ import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import { normalizeRecipeTitle } from '../src/utils/stringUtils.js';
+import { CATEGORIES } from '@/config/constants.js';
 
 // This script finds all recipes that have no image associated to them yet.
 
@@ -9,14 +10,13 @@ import { normalizeRecipeTitle } from '../src/utils/stringUtils.js';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-// Define categories and base directories
-const categories = ['main', 'side', 'supper', 'dessert'];
+// Define base directories
 const imagesBaseDir = path.join(__dirname, '..', 'public', 'images');
 const recipesBaseDir = path.join(__dirname, '..', 'src', 'assets', 'recipes');
 
 let issuesFound = false; // Track if any warnings are printed
 
-categories.forEach((category) => {
+CATEGORIES.forEach((category) => {
   console.log(`\x1b[34m${category}\x1b[0m`); // Blue category log
 
   // Read image files from /public/images/<category>

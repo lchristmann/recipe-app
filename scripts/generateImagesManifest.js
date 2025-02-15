@@ -1,19 +1,19 @@
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
+import { CATEGORIES } from '@/config/constants.js';
 
 // Define __dirname for ES modules
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-// Define the categories and where your images are stored
-const categories = ['main', 'side', 'supper', 'dessert'];
+// Define where images are stored
 const imagesDir = path.join(__dirname, '..', 'public', 'images');
 
 // Create an object to store the image names grouped by category
 const manifest = {};
 
-categories.forEach((category) => {
+CATEGORIES.forEach((category) => {
   const categoryPath = path.join(imagesDir, category);
   try {
     // Read all files from the directory and filter for .webp images

@@ -1,3 +1,7 @@
+<script setup>
+import { CATEGORIES } from '@/config/constants';
+</script>
+
 <template>
 
     <nav class="border-b border-gray-200 bg-white">
@@ -6,18 +10,12 @@
 
                 <div class="flex h-16 px-2 lg:px-0">
                     <div class="-my-px ml-6 flex space-x-8">
-                        <router-link to="/main"
+                        <router-link
+                            v-for="category in CATEGORIES"
+                            :key="category"
+                            :to="{ name: 'overview.show', params: { overview: category } }"
                             class="inline-flex items-center border-b-2 border-transparent px-1 pt-1 text-sm font-medium text-gray-500 hover:border-gray-300 hover:text-gray-700"
-                        >Main</router-link>
-                        <router-link to="/side"
-                            class="inline-flex items-center border-b-2 border-transparent px-1 pt-1 text-sm font-medium text-gray-500 hover:border-gray-300 hover:text-gray-700"
-                        >Side</router-link>
-                        <router-link to="/supper"
-                            class="inline-flex items-center border-b-2 border-transparent px-1 pt-1 text-sm font-medium text-gray-500 hover:border-gray-300 hover:text-gray-700"
-                        >Supper</router-link>
-                        <router-link to="/dessert"
-                            class="inline-flex items-center border-b-2 border-transparent px-1 pt-1 text-sm font-medium text-gray-500 hover:border-gray-300 hover:text-gray-700"
-                        >Dessert</router-link>
+                        >{{ category }}</router-link>
                     </div>
                 </div>
 

@@ -10,8 +10,9 @@
 	- [1.5 Images](#15-images)
 		- [1.5.1 Managing the images](#151-managing-the-images)
 	- [1.6 Build](#16-build)
-- [2. Negative SEO](#2-negative-seo)
-- [3. TODO](#3-todo)
+- [2. Testing](#2-testing)
+- [3. Negative SEO](#3-negative-seo)
+- [4. TODO](#4-todo)
 
 <br>
 
@@ -71,7 +72,13 @@ Run `npm run build`. You can then view this build ("have it served") with `npm r
 
 <br>
 
-## 2. Negative SEO
+## 2. Testing
+
+The [Vitest](https://vitest.dev/guide/) Unit Tests in the tests/unit folder can be run with `npm run test`.
+
+<br>
+
+## 3. Negative SEO
 
 Since this is purely a hobby project, there's no point in having it indexed by search engines.
 
@@ -82,9 +89,8 @@ Therefor they are discouraged from crawling and indexing it at all by
 
 <br>
 
-## 3. TODO
+## 4. TODO
 
-- make navigation with Vue Router
 - add details pages with content section
 - deploy on AWS S3 and put diagram of cloud architecture here
 - do filter functionality and search functionality, refactor app where needed

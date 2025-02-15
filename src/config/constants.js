@@ -1,0 +1,1 @@
+export const CATEGORIES = ['main', 'side', 'supper', 'dessert'];

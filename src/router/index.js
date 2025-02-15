@@ -1,18 +1,17 @@
 import { createRouter, createWebHashHistory } from 'vue-router'
 import Overview from '@/views/Overview.vue'
 import RecipeView from '@/views/RecipeView.vue'
-
-const recipeTypes = ['main', 'side', 'supper', 'dessert']
+import { CATEGORIES } from '@/config/constants'
 
 const routes = [
     { path: '/', name: 'home', redirect: '/main' },
     { 
-        path: '/:overview(main|side|supper|dessert)',
+        path: `/:overview(${CATEGORIES.join("|")})`,
         name: 'overview.show',
         component: Overview,
     },
     { 
-        path: '/:overview(main|side|supper|dessert)/:id/:slug',
+        path: `/:overview(${CATEGORIES.join("|")})/:id/:slug`,
         name: 'recipe.show',
         component: RecipeView,
     },
