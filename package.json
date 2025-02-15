@@ -5,6 +5,10 @@
   "type": "module",
   "scripts": {
     "generate:manifest": "node scripts/generateImagesManifest.js",
+    "images:missing": "node scripts/findMissingImages.js",
+    "images:verify:association": "node scripts/verifyExistingImagesAssociation.js",
+    "images:verify:format": "node scripts/verifyExistingImagesFormat.js",
+    "images:verify": "npm run images:verify:association && npm run images:verify:format",
     "dev": "vite",
     "build": "npm run generate:manifest && vite build",
     "preview": "vite preview"

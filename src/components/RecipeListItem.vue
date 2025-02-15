@@ -1,9 +1,10 @@
 <script setup>
 import manifest from '@/assets/imagesManifest.json';
+import { normalizeRecipeTitle } from '@/utils/stringUtils';
 
 const props = defineProps(['recipe', 'type']);
 
-const imageFileName = props.recipe.title.replace(/\W+/g, '-').toLowerCase() + '.webp';
+const imageFileName = normalizeRecipeTitle(props.recipe.title) + '.webp';
 const imageExists = manifest[props.type] && manifest[props.type].includes(imageFileName);
 const imageUrl = `/images/${props.type}/${imageFileName}`;
 </script>

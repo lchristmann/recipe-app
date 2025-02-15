@@ -8,6 +8,7 @@
 	- [1.3 The App's Origin](#13-the-apps-origin)
 	- [1.4 Development](#14-development)
 	- [1.5 Images](#15-images)
+		- [1.5.1 Managing the images](#151-managing-the-images)
 	- [1.6 Build](#16-build)
 - [2. Negative SEO](#2-negative-seo)
 - [3. TODO](#3-todo)
@@ -20,9 +21,13 @@
 
 This project uses [Vite](https://vite.dev), which requires **Node.js version 18+ or 20+**.
 
+<br>
+
 ### 1.2 Installations
 
 Run `npm install` to install project dependencies (which are specified in `package.json`).
+
+<br>
 
 ### 1.3 The App's Origin
 
@@ -32,17 +37,33 @@ Run `npm install` to install project dependencies (which are specified in `packa
 - following the [TailwindCSS installation instructions](https://tailwindcss.com/docs/installation/using-vite) and
   - adding the `@import "tailwindcss";` to `src/style.css`
 
+<br>
+
 ### 1.4 Development
 
 Run `npm run dev`.
 
+<br>
+
 ### 1.5 Images
 
-> **RULE:** Images must be named like the recipe title specified in `src/assets/recipes/*.json`,<br>&nbsp;&nbsp;&nbsp;&nbsp;but lowercase and with whitespaces replaced by hyphens, e.g. Pommes Bowl -> pommes-bowl.webp
+> **RULE:** Images must be named like the recipe title specified in `src/assets/recipes/*.json`,<br>&nbsp;&nbsp;&nbsp;&nbsp;but lowercase and with whitespaces replaced by hyphens, e.g. Pommes Bowl -> pommes-bowl.webp<br>
+> &nbsp;&nbsp;&nbsp;&nbsp;German Umlaute must be transcribed according to the following rules: ä -> 'ae', ö -> 'oe', ü -> 'ue', ß -> 'ss'.
 
 When adding an image to public/images and you want to see that while developing (locally), run `npm run generate:manifest`.
 
 For deployment, this is not needed, because in the `build` script, this command is already included.
+
+#### 1.5.1 Managing the images
+
+For managing the images, I wrote three custom npm scripts:
+
+- `npm run images:missing`: shows all images missing for recipes
+- `npm run images:verify`: runs both of the following scripts
+  - `npm run images:verify:format`: checks that all images are in the lightweight [WebP image format](https://developers.google.com/speed/webp?hl=de)
+  - `npm run images:verify:association`: checks that all images can be associated with a recipe
+
+<br>
 
 ### 1.6 Build
 
