@@ -1,12 +1,12 @@
 <script setup>
-import manifest from '@/assets/imagesManifest.json';
+import { computed } from 'vue';
 import { normalizeRecipeTitle } from '@/utils/stringUtils';
 
-const props = defineProps(['recipe', 'type']);
+const props = defineProps(['recipe', 'type', 'validImages']);
 
-const imageFileName = normalizeRecipeTitle(props.recipe.title) + '.webp';
-const imageExists = manifest[props.type] && manifest[props.type].includes(imageFileName);
-const imageUrl = `/images/${props.type}/${imageFileName}`;
+const imageFileName = computed(() => normalizeRecipeTitle(props.recipe.title) + '.webp');
+const imageExists = computed(() => props.validImages.has(imageFileName.value));
+const imageUrl = computed(() => `/images/${props.type}/${imageFileName.value}`);
 </script>
 
 <template>

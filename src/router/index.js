@@ -4,14 +4,14 @@ import RecipeView from '@/views/RecipeView.vue'
 import { CATEGORIES } from '@/config/constants'
 
 const routes = [
-    { path: '/', name: 'home', redirect: '/main' },
+    { path: '/', name: 'home', redirect: { name: 'overview.show', params: { category: CATEGORIES[0] } } },
     { 
-        path: `/:overview(${CATEGORIES.join("|")})`,
+        path: `/:category(${CATEGORIES.join("|")})`,
         name: 'overview.show',
         component: Overview,
     },
     { 
-        path: `/:overview(${CATEGORIES.join("|")})/:id/:slug`,
+        path: `/:category(${CATEGORIES.join("|")})/:id/:slug`,
         name: 'recipe.show',
         component: RecipeView,
     },

@@ -13,8 +13,8 @@ import { CATEGORIES } from '@/config/constants';
                         <router-link
                             v-for="category in CATEGORIES"
                             :key="category"
-                            :to="{ name: 'overview.show', params: { overview: category } }"
-                            class="inline-flex items-center border-b-2 border-transparent px-1 pt-1 text-sm font-medium text-gray-500 hover:border-gray-300 hover:text-gray-700"
+                            :to="{ name: 'overview.show', params: { category: category } }"
+                            class="inline-flex items-center border-b-2 border-transparent px-1 pt-1 text-sm font-medium text-gray-500 hover:border-gray-300 hover:text-gray-700 capitalize"
                         >{{ category }}</router-link>
                     </div>
                 </div>
