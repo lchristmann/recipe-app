@@ -2,7 +2,9 @@
     {
         "id": 2000,
         "title": "Salat",
-        "slug": "salat",
+        "labels": [],
+        "time": 10,
+        "cost": 1,
         "ingredients": [
           "Pommes",
           "Tomaten",

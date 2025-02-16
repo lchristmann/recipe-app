@@ -2,7 +2,9 @@
     {
         "id": 4000,
         "title": "Käsekuchen",
-        "slug": "kaesekuchen",
+        "labels": [],
+        "time": 15,
+        "cost": 1,
         "ingredients": [
           "1kg Quark",
           "1 Zitrone",

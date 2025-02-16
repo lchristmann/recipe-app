@@ -2,7 +2,9 @@
   {
       "id": 1,
       "title": "Pommes Bowl",
-      "slug": "pommes-bowl",
+      "labels": ["Kartoffel", "Gemüse"],
+      "time": 10,
+      "cost": 1,
       "ingredients": [
         "Pommes",
         "Tomaten",
@@ -18,7 +20,9 @@
     {
       "id": 2,
       "title": "Spagetthi Bolognese",
-      "slug": "spagetthi-bolognese",
+      "labels": [],
+      "time": 10,
+      "cost": 2,
       "ingredients": [
         "Kartoffeln",
         "Sahne",

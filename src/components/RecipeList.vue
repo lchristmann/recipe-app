@@ -6,7 +6,7 @@ import imagesManifest from '@/assets/imagesManifest.json';
 
 const route = useRoute();
 const recipes = ref([]);
-const validImages = ref(new Set()); // Store valid image filenames
+const availableImages = ref(new Set()); // Store valid image filenames
 
 watchEffect(async () => {
     const category = route.params.category;
@@ -14,11 +14,11 @@ watchEffect(async () => {
     try {
         const module = await import(`@/assets/recipes/${category}.json`);
         recipes.value = module.default;
-        validImages.value = new Set(imagesManifest[category])
+        availableImages.value = new Set(imagesManifest[category])
     } catch (error) {
         console.error(`Error loading recipes for ${category}:`, error);
         recipes.value = [];
-        validImages.value = new Set();
+        availableImages.value = new Set();
     }
 });
 </script>
@@ -33,7 +33,7 @@ watchEffect(async () => {
             :key="index"
             :recipe="recipe"
             :type="route.params.category"
-            :validImages="validImages"
+            :availableImages="availableImages"
         />
 
     </ul>

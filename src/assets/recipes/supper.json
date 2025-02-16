@@ -2,7 +2,9 @@
     {
         "id": 3000,
         "title": "Milchreis",
-        "slug": "milchreis",
+        "labels": [],
+        "time": 10,
+        "cost": 1,
         "ingredients": [
           "Pommes",
           "Tomaten",
