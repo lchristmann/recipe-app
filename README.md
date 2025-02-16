@@ -11,8 +11,9 @@
 		- [1.5.1 Managing the images](#151-managing-the-images)
 	- [1.6 Build](#16-build)
 - [2. Testing](#2-testing)
-- [3. Negative SEO](#3-negative-seo)
-- [4. TODO](#4-todo)
+- [3. Cloud Infrastructure](#3-cloud-infrastructure)
+- [4. Negative SEO](#4-negative-seo)
+- [5. TODO](#5-todo)
 
 <br>
 
@@ -78,7 +79,19 @@ The [Vitest](https://vitest.dev/guide/) Unit Tests in the tests/unit folder can 
 
 <br>
 
-## 3. Negative SEO
+## 3. Cloud Infrastructure
+
+The following diagram shows the [Amazon Web Services](https://aws.amazon.com) cloud infrastructure the site is running on.
+
+![Cloud Architecture Diagram](documentation/cloud-architecture.drawio.svg)
+
+It's a classic static website hosting via S3 and CloudFront setup.
+
+Note that the [Origin-Access-Control](https://aws.amazon.com/de/about-aws/whats-new/2022/08/amazon-cloudfront-origin-access-control/) is used to only enable CloudFront to access the S3 bucket.
+
+<br>
+
+## 4. Negative SEO
 
 Since this is purely a hobby project, there's no point in having it indexed by search engines.
 
@@ -89,8 +102,6 @@ Therefor they are discouraged from crawling and indexing it at all by
 
 <br>
 
-## 4. TODO
+## 5. TODO
 
-- add details pages with content section
-- deploy on AWS S3 and put diagram of cloud architecture here
 - do filter functionality and search functionality, refactor app where needed
