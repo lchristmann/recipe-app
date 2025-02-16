@@ -2,7 +2,7 @@ import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import { normalizeRecipeTitle } from '../src/utils/stringUtils.js';
-import { CATEGORIES } from '@/config/constants.js';
+import { CATEGORIES } from '../src/config/constants.js';
 
 // This script finds all recipes that have no image associated to them yet.
 

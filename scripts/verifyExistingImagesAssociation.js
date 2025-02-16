@@ -2,7 +2,7 @@ import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import { normalizeRecipeTitle } from '../src/utils/stringUtils.js';
-import { CATEGORIES } from '@/config/constants.js';
+import { CATEGORIES } from '../src/config/constants.js';
 
 // This script checks every image file in the public/images folder against the set of expected image names from the recipes in src/assets/recipes/*.json files.
 // It logs a warning if an image isn’t associated with any recipe.

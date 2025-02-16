@@ -1,7 +1,7 @@
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
-import { CATEGORIES } from '@/config/constants.js';
+import { CATEGORIES } from '../src/config/constants.js';
 
 // Define __dirname for ES modules
 const __filename = fileURLToPath(import.meta.url);
