@@ -12,8 +12,9 @@
 	- [1.6 Build](#16-build)
 - [2. Testing](#2-testing)
 - [3. Cloud Infrastructure](#3-cloud-infrastructure)
-- [4. Negative SEO](#4-negative-seo)
-- [5. TODO](#5-todo)
+- [4. Deployment (CI/CD Pipeline)](#4-deployment-cicd-pipeline)
+- [5. Negative SEO](#5-negative-seo)
+- [6. TODO](#6-todo)
 
 <br>
 
@@ -91,7 +92,17 @@ Note that the [Origin-Access-Control](https://aws.amazon.com/de/about-aws/whats-
 
 <br>
 
-## 4. Negative SEO
+## 4. Deployment (CI/CD Pipeline)
+
+Deployment is automated with a GitHub Actions CI/CD pipeline.
+
+![CI/CD Pipeline](documentation/cicd-pipeline.drawio.svg)
+
+This pipeline is triggered by every commit in the Git repository.
+
+<br>
+
+## 5. Negative SEO
 
 Since this is purely a hobby project, there's no point in having it indexed by search engines.
 
@@ -102,6 +113,6 @@ Therefor they are discouraged from crawling and indexing it at all by
 
 <br>
 
-## 5. TODO
+## 6. TODO
 
 - do filter functionality and search functionality, refactor app where needed
