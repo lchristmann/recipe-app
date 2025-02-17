@@ -1,10 +1,13 @@
 <script setup>
+import Banner from './components/Banner.vue';
 import Navbar from '@/components/Navbar.vue'
 </script>
 
 <template>
 
-  <Navbar></Navbar>
+  <Banner/>
+
+  <Navbar/>
 
   <main class="xl:py-10">
     <div class="mx-auto max-w-7xl p-8">
