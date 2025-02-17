@@ -1,19 +1,19 @@
 [
-    {
-        "id": 4000,
-        "title": "Käsekuchen",
-        "labels": [],
-        "time": 15,
-        "cost": 1,
-        "ingredients": [
-          "1kg Quark",
-          "1 Zitrone",
-          "3 Eier",
-          "150g Zucker"
-        ],
-        "instructions": [
-          "Alles miteinander vermengen.",
-          "30 Minuten im Ofen bei 160° backen."
-        ]
-    }
+  {
+    "title": "Käsekuchen",
+    "labels": [],
+    "time": 15,
+    "cost": 1,
+    "ingredients": [
+      "1kg Quark",
+      "1 Zitrone",
+      "3 Eier",
+      "150g Zucker"
+    ],
+    "instructions": [
+      "Alles miteinander vermengen.",
+      "30 Minuten im Ofen bei 160° backen."
+    ],
+    "id": 1
+  }
 ]

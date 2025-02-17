@@ -28,6 +28,9 @@ jobs:
     - name: Run tests
       run: npx vitest run
 
+    - name: Analyze the app's image collection
+      run: npm run images:verify
+
     - name: Build the application
       run: npm run build
 

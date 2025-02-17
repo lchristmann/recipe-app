@@ -1,21 +1,20 @@
 [
-    {
-        "id": 2000,
-        "title": "Salat",
-        "labels": [],
-        "time": 10,
-        "cost": 1,
-        "ingredients": [
-          "Pommes",
-          "Tomaten",
-          "Spinat",
-          "Limette",
-          "Feta"
-        ],
-        "instructions": [
-          "Kartoffeln im Ofen backen.",
-          "Dann alles in einer Bowl drappieren und würzen."
-        ]
-      }
-  ]
-    
+  {
+    "title": "Salat",
+    "labels": [],
+    "time": 10,
+    "cost": 1,
+    "ingredients": [
+      "Pommes",
+      "Tomaten",
+      "Spinat",
+      "Limette",
+      "Feta"
+    ],
+    "instructions": [
+      "Kartoffeln im Ofen backen.",
+      "Dann alles in einer Bowl drappieren und würzen."
+    ],
+    "id": 1
+  }
+]

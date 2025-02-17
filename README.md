@@ -10,6 +10,7 @@
 	- [1.5 Images](#15-images)
 		- [1.5.1 Managing the images](#151-managing-the-images)
 	- [1.6 Build](#16-build)
+	- [1.7 Custom Node.js scripts](#17-custom-nodejs-scripts)
 - [2. Testing](#2-testing)
 - [3. Cloud Infrastructure](#3-cloud-infrastructure)
 - [4. Deployment (CI/CD Pipeline)](#4-deployment-cicd-pipeline)
@@ -74,6 +75,31 @@ Run `npm run build`. You can then view this build ("have it served") with `npm r
 
 <br>
 
+### 1.7 Custom Node.js scripts
+
+This project uses a lot of custom Node.js scripts which can be found in the `/scripts` folder of this project.
+
+They can be executed via `node scripts/<nameOfTheScript>` or via the npm commands shown below (or see `package.json`).
+
+- **generateImagesManifest.js:** `npm run generate:manifest`
+  - reads the `public/images/<category>` directories and puts the information into a JSON file `src/assets/imagesManifest.json` so the application knows immediately what images it has and which not (see `src/components/RecipeList.vue` and `src/views/RecipeView.vue`)
+
+- **generateRecipeIds.js:** `npm run generate:recipe-ids`
+  - goes through the recipes JSON files in `src/assets/recipes` and adds the `id` property with an incrementing value to every recipe object there - this makes it that I don't have to write and maintain indices
+
+- **verifyExistingImagesAssociation.js:** `npm run images:verify:association`
+  - checks every image file in `public/images/<category>` directories against the set of expected image names from the recipes in `src/assets/recipes/*.json` files
+
+- **verifyExistingImagesFormat.js:** `npm run images:verify:format`
+  - checks that all files in `public/images/<category>` directories bear the WebP file extension (that's the only allowed image format), because it's much more efficient than others
+
+- **findMissingImages.js:** `npm run images:missing`
+  - prints all recipes in `src/assets/recipes/<category>.json` that have no image associated to them in `public/images/<category>`
+  
+I defined two groups of execution: `npm run generate` and `npm run images:verify` that each summarize two commands.
+
+<br>
+
 ## 2. Testing
 
 The [Vitest](https://vitest.dev/guide/) Unit Tests in the tests/unit folder can be run with `npm run test`.
@@ -89,6 +115,11 @@ The following diagram shows the [Amazon Web Services](https://aws.amazon.com) cl
 It's a classic static website hosting via S3 and CloudFront setup.
 
 Note that the [Origin-Access-Control](https://aws.amazon.com/de/about-aws/whats-new/2022/08/amazon-cloudfront-origin-access-control/) is used to only enable CloudFront to access the S3 bucket.
+
+For having the subdomain with an own SSL certificate
+
+- one CNAME record had to be added to `lchristmann.com` as verification of domain ownership towards AWS Certificate Manager
+- one A record with an alias to the CloudFront distribution
 
 <br>
 
@@ -116,3 +147,4 @@ Therefor they are discouraged from crawling and indexing it at all by
 ## 6. TODO
 
 - do filter functionality and search functionality, refactor app where needed
+- implement that ids are generated automatically in json files with npm script

@@ -29,4 +29,4 @@ CATEGORIES.forEach((category) => {
 const outputPath = path.join(__dirname, '..', 'src', 'assets', 'imagesManifest.json');
 fs.writeFileSync(outputPath, JSON.stringify(manifest, null, 2));
 
-console.log(`Image manifest generated at: ${outputPath}`);
+console.log(`\x1b[32m✅ Generated image manifest at ${outputPath}\x1b[0m`); // Green color output
