@@ -1,20 +1,78 @@
 [
   {
     "title": "Milchreis",
-    "labels": [],
-    "time": 10,
-    "cost": 1,
+    "labels": [
+      "Reis"
+    ],
+    "time": 25,
+    "cost": 2,
     "ingredients": [
-      "Pommes",
-      "Tomaten",
-      "Spinat",
-      "Limette",
-      "Feta"
+      "Milch",
+      "Reis",
+      "Zucker",
+      "Vanillezucker",
+      "Zimt",
+      "Butter"
     ],
     "instructions": [
-      "Kartoffeln im Ofen backen.",
-      "Dann alles in einer Bowl drappieren und würzen."
+      "Milch in einem Topf erhitzen, aber nicht zum Kochen bringen.",
+      "Den Reis in die Milch geben und bei niedriger Hitze ca. 20 Minuten köcheln lassen.",
+      "Zucker und Vanillezucker hinzufügen und gut umrühren.",
+      "Mit Zimt bestreuen und einen Löffel Butter hinzufügen.",
+      "In Schalen anrichten und servieren."
     ],
     "id": 1
+  },
+  {
+    "title": "Bratkartoffeln",
+    "labels": [
+      "Kartoffel"
+    ],
+    "time": 30,
+    "cost": 3,
+    "ingredients": [
+      "Kartoffeln",
+      "Zwiebel",
+      "Speckwürfel",
+      "Öl",
+      "Salz",
+      "Pfeffer",
+      "Paprika",
+      "Frische Petersilie"
+    ],
+    "instructions": [
+      "Kartoffeln schälen, in Scheiben schneiden und in einem Topf mit Wasser 10 Minuten vorkochen.",
+      "Die Zwiebel und den Speck anbraten, bis sie goldbraun sind.",
+      "Die vorgekochten Kartoffeln abtropfen lassen und in einer Pfanne mit Öl goldbraun braten.",
+      "Mit Salz, Pfeffer, Paprika und frischer Petersilie abschmecken.",
+      "Heiß servieren."
+    ],
+    "id": 2
+  },
+  {
+    "title": "Panierter Camembert",
+    "labels": [
+      "Käse"
+    ],
+    "time": 15,
+    "cost": 3,
+    "ingredients": [
+      "Camembert",
+      "Ei",
+      "Sesam",
+      "Mohn",
+      "Sonnenblumenkerne",
+      "Stärke",
+      "Paniermehl",
+      "Brot zum Servieren"
+    ],
+    "instructions": [
+      "Den Camembert in dicke Scheiben schneiden.",
+      "In einer Schüssel Ei verquirlen und in einer weiteren Schüssel eine Mischung aus Sesam, Mohn, Sonnenblumenkernen, Stärke und Paniermehl vorbereiten.",
+      "Jede Camembert-Scheibe zuerst in Ei tauchen und dann in der Paniermehlmischung wenden.",
+      "In einer Pfanne mit etwas Öl von beiden Seiten goldbraun braten.",
+      "Mit frischem Brot servieren."
+    ],
+    "id": 3
   }
 ]

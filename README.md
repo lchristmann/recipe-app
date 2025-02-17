@@ -3,19 +3,21 @@
 ## Table of Contents <!-- omit in toc -->
 
 - [1. Basics](#1-basics)
-	- [1.1 Requirements](#11-requirements)
-	- [1.2 Installations](#12-installations)
-	- [1.3 The App's Origin](#13-the-apps-origin)
-	- [1.4 Development](#14-development)
-	- [1.5 Images](#15-images)
-		- [1.5.1 Managing the images](#151-managing-the-images)
-	- [1.6 Build](#16-build)
-	- [1.7 Custom Node.js scripts](#17-custom-nodejs-scripts)
+  - [1.1 Requirements](#11-requirements)
+  - [1.2 Installations](#12-installations)
+  - [1.3 The App's Origin](#13-the-apps-origin)
+  - [1.4 Development](#14-development)
+  - [1.5 Images](#15-images)
+    - [1.5.1 Managing the images](#151-managing-the-images)
+  - [1.6 Build](#16-build)
+  - [1.7 Custom Node.js scripts](#17-custom-nodejs-scripts)
 - [2. Testing](#2-testing)
 - [3. Cloud Infrastructure](#3-cloud-infrastructure)
 - [4. Deployment (CI/CD Pipeline)](#4-deployment-cicd-pipeline)
 - [5. Negative SEO](#5-negative-seo)
-- [6. TODO](#6-todo)
+- [6. Content](#6-content)
+  - [6.1. Labels](#61-labels)
+- [7. TODO](#7-todo)
 
 <br>
 
@@ -81,11 +83,14 @@ This project uses a lot of custom Node.js scripts which can be found in the `/sc
 
 They can be executed via `node scripts/<nameOfTheScript>` or via the npm commands shown below (or see `package.json`).
 
-- **generateImagesManifest.js:** `npm run generate:manifest`
-  - reads the `public/images/<category>` directories and puts the information into a JSON file `src/assets/imagesManifest.json` so the application knows immediately what images it has and which not (see `src/components/RecipeList.vue` and `src/views/RecipeView.vue`)
-
 - **generateRecipeIds.js:** `npm run generate:recipe-ids`
   - goes through the recipes JSON files in `src/assets/recipes` and adds the `id` property with an incrementing value to every recipe object there - this makes it that I don't have to write and maintain indices
+
+- **generateImagesManifest.js:** `npm run generate:images-manifest`
+  - reads the `public/images/<category>` directories and puts the information into a JSON file `src/assets/imagesManifest.json` so the application knows immediately what images it has and which not (see `src/components/RecipeList.vue` and `src/views/RecipeView.vue`)
+
+- **generateLabelsManifest.js:** `npm run generate:labels-manifest`
+  - reads the recipes JSON files in `src/assets/recipes` and puts all the unique labels from their recipes as an array into a JSON file `src/assets/labelsManifest.json`
 
 - **verifyExistingImagesAssociation.js:** `npm run images:verify:association`
   - checks every image file in `public/images/<category>` directories against the set of expected image names from the recipes in `src/assets/recipes/*.json` files
@@ -96,7 +101,7 @@ They can be executed via `node scripts/<nameOfTheScript>` or via the npm command
 - **findMissingImages.js:** `npm run images:missing`
   - prints all recipes in `src/assets/recipes/<category>.json` that have no image associated to them in `public/images/<category>`
   
-I defined two groups of execution: `npm run generate` and `npm run images:verify` that each summarize two commands.
+I defined two groups of execution: `npm run generate` and `npm run images:verify` (see `package.json`).
 
 <br>
 
@@ -144,7 +149,31 @@ Therefor they are discouraged from crawling and indexing it at all by
 
 <br>
 
-## 6. TODO
+## 6. Content
+
+### 6.1. Labels
+
+Labels can be added invented arbitrarily for recipes, but here are some proposals, based on the main ingredients of dishes:
+
+- Kartoffel
+- Nudeln
+- Reis
+- Gemüse
+- Fleisch
+- Fisch
+- Käse
+- Hülsenfrüchte
+- Eier
+- Tofu
+- Obst
+
+plus
+
+- Kuchen
+
+<br>
+
+## 7. TODO
 
 - do filter functionality and search functionality, refactor app where needed
 - implement that ids are generated automatically in json files with npm script

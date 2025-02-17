@@ -1,10 +1,16 @@
 <script setup>
-import { ref, watchEffect } from 'vue';
+import { ref, computed, watch, watchEffect } from 'vue';
 import { useRoute } from 'vue-router';
 import RecipeListItem from '@/components/RecipeListItem.vue';
 import imagesManifest from '@/assets/imagesManifest.json';
+import { normalizeQueryParam, normalizeRecipeTitle } from '@/utils/stringUtils';
 
 const route = useRoute();
+
+// Refs for search/filter state
+const filterLabel = ref(route.query.label || ''); // Initialize with query params if available
+const searchKeyword = ref(route.query.search || ''); // Initialize with query params if available
+
 const recipes = ref([]);
 const availableImages = ref(new Set()); // Store valid image filenames
 
@@ -21,6 +27,21 @@ watchEffect(async () => {
         availableImages.value = new Set();
     }
 });
+
+// Watch for changes in the query parameters (label and search)
+watch(() => route.query, () => {
+  filterLabel.value = route.query.label || '';
+  searchKeyword.value = route.query.search || '';
+});
+
+// Filter recipes based on the search keyword and/or label
+const filteredRecipes = computed(() => {
+    return recipes.value.filter(recipe => {
+        const matchesLabel = filterLabel.value ? recipe.labels.some(label => normalizeQueryParam(label) === filterLabel.value) : true;
+        const matchesKeyword = searchKeyword.value ? normalizeRecipeTitle(recipe.title).includes(searchKeyword.value) : true;
+        return matchesLabel && matchesKeyword;
+    });
+});
 </script>
 
 
@@ -29,7 +50,7 @@ watchEffect(async () => {
     <ul role="list" class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
 
         <RecipeListItem
-            v-for="(recipe, index) in recipes"
+            v-for="(recipe, index) in filteredRecipes"
             :key="index"
             :recipe="recipe"
             :type="route.params.category"

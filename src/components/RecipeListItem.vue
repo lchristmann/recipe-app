@@ -1,8 +1,11 @@
 <script setup>
 import { computed } from 'vue';
 import { normalizeRecipeTitle } from '@/utils/stringUtils';
+import { useRoute } from 'vue-router';
 
 const props = defineProps(['recipe', 'type', 'availableImages']);
+
+const route = useRoute();
 
 const normalizedRecipeTitle = computed(() => normalizeRecipeTitle(props.recipe.title));
 const imageFile = computed(() => normalizedRecipeTitle.value + '.webp');
@@ -12,7 +15,7 @@ const imageUrl = computed(() => `/images/${props.type}/${imageFile.value}`);
 
 <template>
 
-    <router-link :to="{ name: 'recipe.show', params: { id: recipe.id, slug: normalizedRecipeTitle } }">
+    <router-link :to="{ name: 'recipe.show', params: { id: recipe.id, slug: normalizedRecipeTitle }, query: route.query }">
         <div
             class="aspect-3/1 px-4 py-5 sm:p-6 relative isolate flex flex-col justify-end overflow-hidden rounded-xl shadow-sm cursor-pointer hover:opacity-75">
             <img v-if="imageExists" :src="imageUrl" alt="Bild von {{ props.recipe.title }}"

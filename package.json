@@ -4,15 +4,16 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "generate:manifest": "node scripts/generateImagesManifest.js",
     "generate:recipe-ids": "node scripts/generateRecipeIds.js",
-    "generate": "npm run generate:manifest && npm run generate:recipe-ids",
+    "generate:images-manifest": "node scripts/generateImagesManifest.js",
+    "generate:labels-manifest": "node scripts/generateLabelsManifest.js",
+    "generate": "npm run generate:recipe-ids && npm run generate:images-manifest && npm run generate:labels-manifest",
 
     "images:missing": "node scripts/findMissingImages.js",
     "images:verify:association": "node scripts/verifyExistingImagesAssociation.js",
     "images:verify:format": "node scripts/verifyExistingImagesFormat.js",
     "images:verify": "npm run images:verify:association && npm run images:verify:format",
-    
+
     "dev": "npm run generate && vite",
     "build": "npm run generate && vite build",
     "preview": "vite preview",
