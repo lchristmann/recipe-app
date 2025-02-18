@@ -1,3 +1,5 @@
+To suggest new recipes, send an e-mail to hello@lchristmann.com!
+
 # Recipe App <!-- omit in toc -->
 
 ## Table of Contents <!-- omit in toc -->
@@ -18,7 +20,6 @@
 - [5. Negative SEO](#5-negative-seo)
 - [6. Content](#6-content)
   - [6.1. Labels](#61-labels)
-- [7. TODO](#7-todo)
 
 <br>
 
@@ -184,10 +185,3 @@ Labels can be added invented arbitrarily for recipes, but here are some proposal
 plus
 
 - Kuchen
-
-<br>
-
-## 7. TODO
-
-- do filter functionality and search functionality, refactor app where needed
-- implement that ids are generated automatically in json files with npm script
