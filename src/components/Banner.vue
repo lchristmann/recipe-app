@@ -48,5 +48,4 @@ const dismissBanner = () => {
         </div>
     </div>
 
-
 </template>

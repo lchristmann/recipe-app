@@ -17,8 +17,7 @@
     "instructions": [
       "Kartoffeln im Ofen backen.",
       "Dann alles in einer Bowl drappieren und würzen."
-    ],
-    "id": 1
+    ]
   },
   {
     "title": "Spagetthi Bolognese",
@@ -38,8 +37,7 @@
       "Nudeln kochen.",
       "In der Pfanne Hackfleisch braten und dann mit gehackten Tomaten zu einer Soße kochen.",
       "Wie im Bild mit Käse überstreut servieren."
-    ],
-    "id": 2
+    ]
   },
   {
     "title": "Ofengemüse",
@@ -61,8 +59,7 @@
       "Gemüse waschen und in mundgerechte Stücke schneiden.",
       "Alles auf einem Backblech verteilen, mit Olivenöl beträufeln und mit Salz, Pfeffer und Rosmarin würzen.",
       "Für ca. 25-30 Minuten im Ofen backen, bis das Gemüse weich und leicht gebräunt ist."
-    ],
-    "id": 3
+    ]
   },
   {
     "title": "Kartoffelgratin",
@@ -88,7 +85,6 @@
       "Knoblauch fein hacken und mit Sahne und Milch vermengen. Mit Salz, Pfeffer und Muskatnuss würzen.",
       "Kartoffelscheiben in eine Auflaufform schichten, die Sahne-Mischung darüber gießen und mit Käse bestreuen.",
       "Für ca. 40 Minuten im Ofen backen, bis das Gratin goldbraun ist."
-    ],
-    "id": 4
+    ]
   }
 ]

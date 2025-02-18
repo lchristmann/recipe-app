@@ -8,6 +8,8 @@
     "generate:images-manifest": "node scripts/generateImagesManifest.js",
     "generate:labels-manifest": "node scripts/generateLabelsManifest.js",
     "generate": "npm run generate:recipe-ids && npm run generate:images-manifest && npm run generate:labels-manifest",
+    
+    "clean:recipe-ids": "node scripts/removeRecipeIds.js",
 
     "images:missing": "node scripts/findMissingImages.js",
     "images:verify:association": "node scripts/verifyExistingImagesAssociation.js",

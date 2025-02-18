@@ -21,8 +21,7 @@
       "Oliven und Feta hinzufügen.",
       "Mit Olivenöl, Oregano, Salz und Pfeffer würzen.",
       "Alles gut vermengen und sofort servieren."
-    ],
-    "id": 1
+    ]
   },
   {
     "title": "Gemischter Salat",
@@ -45,8 +44,7 @@
       "Tomaten, Gurken, Paprika und Karotten in kleine Stücke schneiden und hinzufügen.",
       "Mit Olivenöl, Balsamico-Essig, Salz und Pfeffer abschmecken.",
       "Gut vermengen und servieren."
-    ],
-    "id": 2
+    ]
   },
   {
     "title": "Rote Bete Salat",
@@ -69,8 +67,7 @@
       "Alles in einer Schüssel anrichten und mit Walnüssen bestreuen.",
       "Mit Olivenöl, Balsamico-Essig, Salz und Pfeffer würzen.",
       "Gut vermengen und servieren."
-    ],
-    "id": 3
+    ]
   },
   {
     "title": "Krautsalat",
@@ -92,7 +89,6 @@
       "In einer Schüssel mit Apfelessig, Olivenöl, Senf, Zucker, Salz und Pfeffer gut vermengen.",
       "Den Salat mindestens 10 Minuten ziehen lassen, damit er schön durchzieht.",
       "Vor dem Servieren nochmal gut durchmischen."
-    ],
-    "id": 4
+    ]
   }
 ]

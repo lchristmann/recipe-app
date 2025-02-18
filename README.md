@@ -86,6 +86,9 @@ They can be executed via `node scripts/<nameOfTheScript>` or via the npm command
 - **generateRecipeIds.js:** `npm run generate:recipe-ids`
   - goes through the recipes JSON files in `src/assets/recipes` and adds the `id` property with an incrementing value to every recipe object there - this makes it that I don't have to write and maintain indices
 
+- **removeRecipeIds.js:** `npm run clean:recipe-ids`
+  - reverts effects of above command, useful for not committing unncessary data into version control after having worked on this project
+
 - **generateImagesManifest.js:** `npm run generate:images-manifest`
   - reads the `public/images/<category>` directories and puts the information into a JSON file `src/assets/imagesManifest.json` so the application knows immediately what images it has and which not (see `src/components/RecipeList.vue` and `src/views/RecipeView.vue`)
 

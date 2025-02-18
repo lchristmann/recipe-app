@@ -9,8 +9,7 @@
     ],
     "instructions": [
       "Das Eis nach Belieben servieren und genießen."
-    ],
-    "id": 1
+    ]
   },
   {
     "title": "Gebratene Bananen",
@@ -30,8 +29,7 @@
       "Butter in einer Pfanne erhitzen und die Bananenscheiben darin goldbraun braten.",
       "Mit Zucker und Zimt bestreuen und noch kurz karamellisieren lassen.",
       "Heiß servieren, optional mit Vanilleeis oder Sahne."
-    ],
-    "id": 2
+    ]
   },
   {
     "title": "Käsekuchen",
@@ -49,7 +47,6 @@
     "instructions": [
       "Alles miteinander vermengen.",
       "30 Minuten im Ofen bei 160° backen."
-    ],
-    "id": 3
+    ]
   }
 ]

@@ -20,8 +20,7 @@
       "Zucker und Vanillezucker hinzufügen und gut umrühren.",
       "Mit Zimt bestreuen und einen Löffel Butter hinzufügen.",
       "In Schalen anrichten und servieren."
-    ],
-    "id": 1
+    ]
   },
   {
     "title": "Bratkartoffeln",
@@ -46,8 +45,7 @@
       "Die vorgekochten Kartoffeln abtropfen lassen und in einer Pfanne mit Öl goldbraun braten.",
       "Mit Salz, Pfeffer, Paprika und frischer Petersilie abschmecken.",
       "Heiß servieren."
-    ],
-    "id": 2
+    ]
   },
   {
     "title": "Panierter Camembert",
@@ -72,7 +70,6 @@
       "Jede Camembert-Scheibe zuerst in Ei tauchen und dann in der Paniermehlmischung wenden.",
       "In einer Pfanne mit etwas Öl von beiden Seiten goldbraun braten.",
       "Mit frischem Brot servieren."
-    ],
-    "id": 3
+    ]
   }
 ]

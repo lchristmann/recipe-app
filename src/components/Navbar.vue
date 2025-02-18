@@ -1,7 +1,7 @@
 <script setup>
 import { CATEGORIES } from '@/config/constants';
 import { useRoute } from 'vue-router';
-import SearchAndFilter from './SearchAndFilter.vue';
+import SearchAndFilter from '@/components/SearchAndFilter.vue';
 
 const route = useRoute();
 </script>
