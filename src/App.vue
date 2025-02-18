@@ -6,9 +6,9 @@ import Footer from '@/components/Footer.vue';
 
 <template>
 
-  <Banner/>
+  <Banner />
 
-  <Navbar/>
+  <Navbar />
 
   <main class="xl:py-10">
     <div class="mx-auto max-w-7xl p-8">
@@ -17,7 +17,7 @@ import Footer from '@/components/Footer.vue';
 
     </div>
   </main>
-  
+
   <Footer></Footer>
 
 </template>

@@ -4,16 +4,16 @@ import { ref, onMounted } from 'vue';
 const showBanner = ref(true);
 
 onMounted(() => {
-  // Check if the banner has been dismissed before
-  const dismissed = localStorage.getItem('bannerDismissed');
-  if (dismissed === 'true') {
-    showBanner.value = false;
-  }
+    // Check if the banner has been dismissed before
+    const dismissed = localStorage.getItem('bannerDismissed');
+    if (dismissed === 'true') {
+        showBanner.value = false;
+    }
 });
 
 const dismissBanner = () => {
-  showBanner.value = false;
-  localStorage.setItem('bannerDismissed', 'true');
+    showBanner.value = false;
+    localStorage.setItem('bannerDismissed', 'true');
 };
 </script>
 
@@ -37,7 +37,8 @@ const dismissBanner = () => {
             Add this site to your homescreen to always have something to eat! First and last time I tell you!
         </p>
         <div class="flex flex-1 justify-end">
-            <button type="button" @click="dismissBanner" class="-m-3 p-3 cursor-pointer focus-visible:outline-offset-[-4px]">
+            <button type="button" @click="dismissBanner"
+                class="-m-3 p-3 cursor-pointer focus-visible:outline-offset-[-4px]">
                 <span class="sr-only">Dismiss</span>
                 <svg class="size-5 text-gray-900" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"
                     data-slot="icon">

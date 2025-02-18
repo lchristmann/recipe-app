@@ -30,8 +30,8 @@ watchEffect(async () => {
 
 // Watch for changes in the query parameters (label and search)
 watch(() => route.query, () => {
-  filterLabel.value = route.query.label || '';
-  searchKeyword.value = route.query.search || '';
+    filterLabel.value = route.query.label || '';
+    searchKeyword.value = route.query.search || '';
 });
 
 // Filter recipes based on the search keyword and/or label
@@ -49,14 +49,8 @@ const filteredRecipes = computed(() => {
 
     <ul role="list" class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
 
-        <RecipeListItem
-            v-for="(recipe, index) in filteredRecipes"
-            :key="index"
-            :index="index"
-            :recipe="recipe"
-            :type="route.params.category"
-            :availableImages="availableImages"
-        />
+        <RecipeListItem v-for="(recipe, index) in filteredRecipes" :key="index" :index="index" :recipe="recipe"
+            :type="route.params.category" :availableImages="availableImages" />
 
     </ul>
 

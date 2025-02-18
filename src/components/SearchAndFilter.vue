@@ -64,13 +64,11 @@ watch(searchKeyword, updateQueryParams);
         </div>
 
         <!-- Button to toggle Filter Mode -->
-        <button type="button"
-            @click="filterActive = !filterActive; filterLabel = searchKeyword = '';"
+        <button type="button" @click="filterActive = !filterActive; filterLabel = searchKeyword = '';"
             class="flex shrink-0 items-center gap-x-1.5 rounded-r-md bg-white px-3 py-2 text-sm font-semibold text-gray-500 outline-1 -outline-offset-1 outline-gray-300 hover:bg-gray-50"
-            :class="{ 'relative outline-1 -outline-offset-1 outline-orange-700 text-orange-700': filterActive }"
-        >
-            <svg class="-ml-0.5 size-4 text-gray-400" viewBox="0 0 16 16"
-                :class="{ 'text-orange-700': filterActive }" fill="currentColor" aria-hidden="true" data-slot="icon">
+            :class="{ 'relative outline-1 -outline-offset-1 outline-orange-700 text-orange-700': filterActive }">
+            <svg class="-ml-0.5 size-4 text-gray-400" viewBox="0 0 16 16" :class="{ 'text-orange-700': filterActive }"
+                fill="currentColor" aria-hidden="true" data-slot="icon">
                 <path fill-rule="evenodd"
                     d="M2 2.75A.75.75 0 0 1 2.75 2h9.5a.75.75 0 0 1 0 1.5h-9.5A.75.75 0 0 1 2 2.75ZM2 6.25a.75.75 0 0 1 .75-.75h5.5a.75.75 0 0 1 0 1.5h-5.5A.75.75 0 0 1 2 6.25Zm0 3.5A.75.75 0 0 1 2.75 9h3.5a.75.75 0 0 1 0 1.5h-3.5A.75.75 0 0 1 2 9.75ZM9.22 9.53a.75.75 0 0 1 0-1.06l2.25-2.25a.75.75 0 0 1 1.06 0l2.25 2.25a.75.75 0 0 1-1.06 1.06l-.97-.97v5.69a.75.75 0 0 1-1.5 0V8.56l-.97.97a.75.75 0 0 1-1.06 0Z"
                     clip-rule="evenodd" />

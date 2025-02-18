@@ -15,7 +15,8 @@ const imageUrl = computed(() => `/images/${props.type}/${imageFile.value}`);
 
 <template>
 
-    <router-link :to="{ name: 'recipe.show', params: { id: recipe.id, slug: normalizedRecipeTitle }, query: route.query }">
+    <router-link
+        :to="{ name: 'recipe.show', params: { id: recipe.id, slug: normalizedRecipeTitle }, query: route.query }">
         <div
             class="aspect-3/1 px-4 py-5 sm:p-6 relative isolate flex flex-col justify-end overflow-hidden rounded-xl shadow-sm cursor-pointer hover:opacity-75">
             <img v-if="imageExists" :src="imageUrl" alt="Bild von {{ props.recipe.title }}"

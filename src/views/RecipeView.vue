@@ -56,15 +56,17 @@ watchEffect(async () => {
         <div class="flex items-center gap-2">
           💳
           <span>
-            <span>{{ "$".repeat(recipe.cost) }}</span><span class="text-gray-400/75">{{ "$".repeat(3 - recipe.cost) }}</span>
+            <span>{{ "$".repeat(recipe.cost) }}</span><span class="text-gray-400/75">{{ "$".repeat(3 - recipe.cost)
+              }}</span>
           </span>
         </div>
       </div>
 
-      <div v-if="availableImages.has(imageFileName)" class="block font-sans text-sm antialiased font-normal leading-normal text-right text-gray-500">
+      <div v-if="availableImages.has(imageFileName)"
+        class="block font-sans text-sm antialiased font-normal leading-normal text-right text-gray-500">
         <em>photo by {{ recipe.photoBy || "lchristmann" }}</em>
       </div>
-      
+
     </div>
 
     <div class="mt-4">

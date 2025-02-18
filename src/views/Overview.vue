@@ -5,6 +5,6 @@ import RecipeList from '@/components/RecipeList.vue';
 
 <template>
 
-    <RecipeList/>
+    <RecipeList />
 
 </template>
