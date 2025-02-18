@@ -3,7 +3,7 @@ import { computed } from 'vue';
 import { normalizeRecipeTitle } from '@/utils/stringUtils';
 import { useRoute } from 'vue-router';
 
-const props = defineProps(['recipe', 'type', 'availableImages']);
+const props = defineProps(['recipe', 'type', 'availableImages', 'index']);
 
 const route = useRoute();
 
@@ -19,7 +19,7 @@ const imageUrl = computed(() => `/images/${props.type}/${imageFile.value}`);
         <div
             class="aspect-3/1 px-4 py-5 sm:p-6 relative isolate flex flex-col justify-end overflow-hidden rounded-xl shadow-sm cursor-pointer hover:opacity-75">
             <img v-if="imageExists" :src="imageUrl" alt="Bild von {{ props.recipe.title }}"
-                class="absolute inset-0 h-full w-full object-cover" loading="lazy">
+                class="absolute inset-0 h-full w-full object-cover" :loading="props.index > 4 ? 'lazy' : 'eager'">
             <div v-else class="absolute inset-0 bg-gradient-to-r from-gray-900 via-orange-50 to-gray-700 opacity-80">
             </div>
             <div class="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/60"></div>

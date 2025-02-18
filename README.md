@@ -9,6 +9,7 @@
   - [1.4 Development](#14-development)
   - [1.5 Images](#15-images)
     - [1.5.1 Managing the images](#151-managing-the-images)
+    - [1.5.2 Optimizing the images](#152-optimizing-the-images)
   - [1.6 Build](#16-build)
   - [1.7 Custom Node.js scripts](#17-custom-nodejs-scripts)
 - [2. Testing](#2-testing)
@@ -68,6 +69,16 @@ For managing the images, I wrote three custom npm scripts:
 - `npm run images:verify`: runs both of the following scripts
   - `npm run images:verify:format`: checks that all images are in the lightweight [WebP image format](https://developers.google.com/speed/webp?hl=de)
   - `npm run images:verify:association`: checks that all images can be associated with a recipe
+
+#### 1.5.2 Optimizing the images
+
+Optimizations I have to taken already:
+
+- using lazy loading on images of the recipes list, which are "below the fold" (not on screen for the user): only the first five images are eagerly loaded
+- using an image format with best efficiency (compression and quality): WebP
+- having caching (set to two weeks) for the whole app and distribution via CDN (AWS CloudFront) -> fast global delivery with few roadtrips to the source (S3 bucket is the source, see [Cloud Infrastructure](#3-cloud-infrastructure))
+- include images in a small resolution and roughly 2/1 aspect ratio (but 3/1 in the recipe list should also look fine)
+  - somethig like 1200 x 600 is very good
 
 <br>
 

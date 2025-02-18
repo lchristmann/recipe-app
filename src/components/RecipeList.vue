@@ -52,6 +52,7 @@ const filteredRecipes = computed(() => {
         <RecipeListItem
             v-for="(recipe, index) in filteredRecipes"
             :key="index"
+            :index="index"
             :recipe="recipe"
             :type="route.params.category"
             :availableImages="availableImages"

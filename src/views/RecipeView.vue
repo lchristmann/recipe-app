@@ -44,7 +44,7 @@ watchEffect(async () => {
     <h1 class="text-3xl font-semibold tracking-tight text-pretty text-gray-900 sm:text-4xl">{{ recipe.title }}</h1>
 
     <img v-if="availableImages.has(imageFileName)" :src="imageUrl" alt="Bild von {{ recipe.title }}"
-      class="aspect-2/1 inset-0 mt-4 h-full w-full object-cover rounded-xl" loading="lazy">
+      class="aspect-2/1 inset-0 mt-4 h-full w-full object-cover rounded-xl">
 
     <div class="flex justify-between items-center mt-2 mx-1">
 
