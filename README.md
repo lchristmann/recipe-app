@@ -145,11 +145,7 @@ For having the subdomain with an own SSL certificate
 
 ## 4. Deployment (CI/CD Pipeline)
 
-Deployment is automated with a GitHub Actions CI/CD pipeline.
-
-![CI/CD Pipeline](documentation/cicd-pipeline.drawio.svg)
-
-This pipeline is triggered by every commit in the Git repository.
+Deployment is automated with a GitHub Actions CI/CD pipeline which is triggered by every commit in the Git repository (see `.github/workflows/cicd.yml`).
 
 <br>
 
