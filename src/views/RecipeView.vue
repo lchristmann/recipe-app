@@ -2,20 +2,20 @@
 import RecipeLabels from '@/components/RecipeLabels.vue';
 import { ref, watchEffect } from 'vue';
 import { useRoute, useRouter } from 'vue-router';
-import { recipeTitleToFileName } from '@/utils/stringUtils';
+import { recipeFileNameToTitle } from '@/utils/stringUtils';
 
 const route = useRoute();
 const router = useRouter();
 const recipe = ref(null);
-const recipeDetails = ref(null);
 
 watchEffect(async () => {
   const category = route.params.category;
-  const recipeId = route.params.id;
+  const recipeFileName = route.params.title;
 
   try {
-    const module = await import(`@/assets/recipes/${category}.json`);
-    recipe.value = module.default.find(r => r.id == recipeId) || null;
+    const module = await import(`@/assets/recipes/${category}/${recipeFileName}.json`);
+    recipe.value = module.default;
+    recipe.value.title = recipeFileNameToTitle(recipeFileName)
 
     // If no recipe was found, redirect to 404
     if (!recipe.value) {
@@ -23,21 +23,10 @@ watchEffect(async () => {
       return;
     }
 
-    // Fetch the single recipe JSON file
-    try {
-      // Use a relative path or the absolute path to the asset
-      const recipeModule = await import(`../assets/recipes/${category}/${recipeTitleToFileName(recipe.value.title)}.json`);
-      recipeDetails.value = recipeModule.default;
-    } catch (error) {
-      console.error(`Error loading recipe details:`, error);
-      recipeDetails.value = null;
-    }
-
   } catch (error) {
-    console.error(`Error loading recipe ${category}/${recipeId}:`, error);
+    console.error(`Error loading recipe ${category}/${recipeFileName}:`, error);
     router.push({ name: 'NotFound' }); // Redirect to 404 on error as well
     recipe.value = null;
-    recipeDetails.value = null;
   }
 });
 </script>
@@ -77,17 +66,17 @@ watchEffect(async () => {
 
     </div>
 
-    <div v-if="recipeDetails" class="mt-4">
+    <div class="mt-4">
       <h2 class="text-xl font-semibold text-gray-900">Zutaten</h2>
       <ul class="mt-2 list-disc list-inside text-gray-700">
-        <li v-for="(ingredient, index) in recipeDetails.ingredients" :key="index">{{ ingredient }}</li>
+        <li v-for="(ingredient, index) in recipe.ingredients" :key="index">{{ ingredient }}</li>
       </ul>
     </div>
 
-    <div v-if="recipeDetails" class="mt-4">
+    <div class="mt-4">
       <h2 class="text-xl font-semibold text-gray-900">Zubereitung</h2>
       <ol class="mt-2 list-decimal list-inside text-gray-700">
-        <li v-for="(step, index) in recipeDetails.instructions" :key="index">{{ step }}</li>
+        <li v-for="(step, index) in recipe.instructions" :key="index">{{ step }}</li>
       </ol>
     </div>
 

@@ -2,7 +2,7 @@
 import { ref, computed, watch, watchEffect } from 'vue';
 import { useRoute } from 'vue-router';
 import RecipeListItem from '@/components/RecipeListItem.vue';
-import { normalizeQueryParam, normalizeRecipeTitle } from '@/utils/stringUtils';
+import { makeKebabCase } from '@/utils/stringUtils';
 
 const route = useRoute();
 
@@ -33,8 +33,8 @@ watch(() => route.query, () => {
 // Filter recipes based on the search keyword and/or label
 const filteredRecipes = computed(() => {
     return recipes.value.filter(recipe => {
-        const matchesLabel = filterLabel.value ? recipe.labels.some(label => normalizeQueryParam(label) === filterLabel.value) : true;
-        const matchesKeyword = searchKeyword.value ? normalizeRecipeTitle(recipe.title).includes(searchKeyword.value) : true;
+        const matchesLabel = filterLabel.value ? recipe.labels.some(label => makeKebabCase(label) === filterLabel.value) : true;
+        const matchesKeyword = searchKeyword.value ? makeKebabCase(recipe.title).includes(searchKeyword.value) : true;
         return matchesLabel && matchesKeyword;
     });
 });

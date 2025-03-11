@@ -1,7 +1,7 @@
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
-import { recipeTitleToFileName } from '../src/utils/stringUtils.js'; // Use the new function
+import { makeKebabCase } from '../src/utils/stringUtils.js'; // Use the new function
 import { CATEGORIES } from '../src/config/constants.js';
 
 // This script checks every image file in the public/images folder against the set of expected recipe JSON files in the src/assets/recipes/*.json files.
@@ -51,7 +51,7 @@ CATEGORIES.forEach((category) => {
 
   // Create a set of expected recipe JSON names (without extension) based on recipe titles
   const expectedRecipeNames = new Set(
-    recipeFiles.map((recipeFile) => recipeTitleToFileName(path.basename(recipeFile, '.json')))
+    recipeFiles.map((recipeFile) => makeKebabCase(path.basename(recipeFile, '.json')))
   );
 
   // Verify that every image file corresponds to a recipe JSON file

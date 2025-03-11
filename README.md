@@ -115,8 +115,8 @@ They can be executed via `node scripts/<nameOfTheScript>` or via the npm command
 - **verifyExistingImagesFormat.js:** `npm run images:verify:format`
   - checks that all files in `public/images/<category>` directories bear the WebP file extension (that's the only allowed image format), because it's much more efficient than others
 
-- **findMissingImages.js:** `npm run images:missing`
-  - prints all recipes in `src/assets/recipes/<category>.json` that have no image associated to them in `public/images/<category>`
+- **showMissingImages.js:** `npm run show:missing-images`
+  - checks for all recipe files `src/assets/recipes/<category>/<recipe>.json` if they have a corresponding image `public/images/<category>/<recipe>.webp`
   
 I defined two groups of execution: `npm run generate` and `npm run images:verify` (see `package.json`).
 
@@ -187,12 +187,6 @@ plus
 <br>
 
 ## 7. Development Roadmap
-
-- instead of fetching the potentially large aggregate JSON file in the RecipeView, just fetch the single recipe JSONs
-  - therefor have the `normalizeRecipeTitle()` with `recipeTitleToFilename()` -> käsekuchen instead of kaesekuchen, which is the filename (+.json)
-  - completely cut the usage of "normalizeRecipeTitle()" and develop my two new converter functions into a full, tested replacement
-  - have the same extra data that's produced into the aggregate files be written in the single recipe JSON files, too (hasImage, imageUrl)
-  -> just fetch that file in my RecipeView.vue component.
 
 ### 7.1. Ideas Playground
 

@@ -2,7 +2,7 @@
 import { ref, watch } from 'vue';
 import labels from '@/assets/labelsManifest.json';
 import { useRoute, useRouter } from 'vue-router';
-import { normalizeQueryParam } from '@/utils/stringUtils';
+import { makeKebabCase } from '@/utils/stringUtils';
 
 const router = useRouter();
 const route = useRoute();
@@ -19,11 +19,11 @@ const updateQueryParams = () => {
     const query = {};
 
     if (filterLabel.value) {
-        query.label = normalizeQueryParam(filterLabel.value);
+        query.label = makeKebabCase(filterLabel.value);
     }
 
     if (searchKeyword.value) {
-        query.search = normalizeQueryParam(searchKeyword.value);
+        query.search = makeKebabCase(searchKeyword.value);
     }
 
     router.replace({ query });

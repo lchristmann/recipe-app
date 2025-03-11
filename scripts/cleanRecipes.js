@@ -29,7 +29,6 @@ CATEGORIES.forEach(category => {
       let recipe = JSON.parse(data);
 
       // Remove unwanted properties if they exist
-      delete recipe.id;
       delete recipe.hasImage;
       delete recipe.imageUrl;
 

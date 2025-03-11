@@ -27,7 +27,6 @@ CATEGORIES.forEach(category => {
   // Get all .json files in the category directory
   const files = fs.readdirSync(categoryDir).filter(file => file.toLowerCase().endsWith('.json'));
 
-  let idCounter = 1;
   const aggregate = [];
 
   files.forEach(file => {
@@ -46,14 +45,12 @@ CATEGORIES.forEach(category => {
       const imageUrl = `/images/${category}/${imageFileName}`;
 
       // Update single recipe JSON file with new properties
-      recipe.id = idCounter;
       recipe.hasImage = hasImage;
       if (hasImage) recipe.imageUrl = imageUrl;
       fs.writeFileSync(filePath, JSON.stringify(recipe, null, 2));
 
       // Build recipe object with only necessary fields for aggregation
       const recipeData = {
-        id: idCounter++,
         title,
         labels: recipe.labels,
         time: recipe.time,

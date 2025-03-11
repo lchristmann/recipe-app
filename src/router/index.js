@@ -11,7 +11,7 @@ const routes = [
         component: Overview,
     },
     { 
-        path: `/:category(${CATEGORIES.join("|")})/:id/:slug`,
+        path: `/:category(${CATEGORIES.join("|")})/:title`,
         name: 'recipe.show',
         component: RecipeView,
     },

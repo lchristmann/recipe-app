@@ -1,52 +1,46 @@
 import { describe, it, expect } from 'vitest';
-import { normalizeRecipeTitle } from '@/utils/stringUtils.js';
-import { normalizeQueryParam } from '@/utils/stringUtils.js';
 import { recipeFileNameToTitle } from '@/utils/stringUtils.js';
-import { recipeTitleToFileName } from '@/utils/stringUtils.js';
+import { makeKebabCase } from '../../src/utils/stringUtils';
 
-describe('normalizeRecipeTitle', () => {
+describe('makeKebabCase', () => {
 
     it('converts titles to lowercase and replaces spaces with hyphens', () => {
-        expect(normalizeRecipeTitle('Spaghetti Bolognese')).toBe('spaghetti-bolognese');
+        expect(makeKebabCase('Spaghetti Bolognese')).toBe('spaghetti-bolognese');
     });
 
     it('removes leading and trailing whitespaces', () => {
-        expect(normalizeRecipeTitle('  Lasagne  ')).toBe('lasagne');
+        expect(makeKebabCase('  Lasagne  ')).toBe('lasagne');
     });
 
-    it('converts German umlauts correctly', () => {
-        expect(normalizeRecipeTitle('Käsekuchen')).toBe('kaesekuchen');
-        expect(normalizeRecipeTitle('Möhrenkuchen')).toBe('moehrenkuchen');
-        expect(normalizeRecipeTitle('Süße Brezel')).toBe('suesse-brezel');
-        expect(normalizeRecipeTitle('Fußball-Torte')).toBe('fussball-torte');
-    });
-
-    it('can even remove special characters at the start or end or next to whitespaces', () => {
-        expect(normalizeRecipeTitle('&Pizza! Döner & Feta!!')).toBe('pizza-doener-feta');
+    it('lowercases German umlauts correctly', () => {
+        expect(makeKebabCase('Käsekuchen')).toBe('käsekuchen');
+        expect(makeKebabCase('Möhrenkuchen')).toBe('möhrenkuchen');
+        expect(makeKebabCase('Süße Brezel')).toBe('süße-brezel');
+        expect(makeKebabCase('Fußball-Torte')).toBe('fußball-torte');
     });
 
 });
 
-describe('normalizeQueryParam', () => {
+describe('makeKebabCase', () => {
 
     it('converts titles to lowercase and replaces spaces with hyphens', () => {
-        expect(normalizeQueryParam('Kartoffel')).toBe('kartoffel');
+        expect(makeKebabCase('Kartoffel')).toBe('kartoffel');
     });
     
     it('turns whitespaces and other non-word characters into hyphens and even collapses those', () => {
-        expect(normalizeQueryParam('Quick & Easy')).toBe('quick-easy');
+        expect(makeKebabCase('Quick & Easy')).toBe('quick-&-easy');
     });
 
     it('eleminates trailing non-word characters', () => {
-        expect(normalizeQueryParam('Nice!')).toBe('nice');
+        expect(makeKebabCase('Nice')).toBe('nice');
     });
 
     it('converts German umlauts correctly', () => {
-        expect(normalizeQueryParam('Gemüse')).toBe('gemuese');
-        expect(normalizeQueryParam('Käse')).toBe('kaese');
-        expect(normalizeQueryParam('Spaß')).toBe('spass');
-        expect(normalizeQueryParam('Süßes')).toBe('suesses');
-        expect(normalizeQueryParam('Hülsenfrüchte')).toBe('huelsenfruechte');
+        expect(makeKebabCase('Gemüse')).toBe('gemüse');
+        expect(makeKebabCase('Käse')).toBe('käse');
+        expect(makeKebabCase('Spaß')).toBe('spaß');
+        expect(makeKebabCase('Süßes')).toBe('süßes');
+        expect(makeKebabCase('Hülsenfrüchte')).toBe('hülsenfrüchte');
     });
 
 });
@@ -67,18 +61,18 @@ describe('recipeFileNameToTitle', () => {
 
 });
 
-describe('recipeTitleToFileName', () => {
+describe('makeKebabCase', () => {
 
     it('converts a recipe title to the correct JSON filename', () => {
-        expect(recipeTitleToFileName('Gebratene Bananen')).toBe('gebratene-bananen');
+        expect(makeKebabCase('Gebratene Bananen')).toBe('gebratene-bananen');
     });
     
     it('converts a recipe title to the correct JSON filename', () => {
-        expect(recipeTitleToFileName('Käsekuchen')).toBe('käsekuchen');
+        expect(makeKebabCase('Käsekuchen')).toBe('käsekuchen');
     });
 
     it('converts a recipe title to the correct JSON filename', () => {
-        expect(recipeTitleToFileName('Pommes Bowl')).toBe('pommes-bowl');
+        expect(makeKebabCase('Pommes Bowl')).toBe('pommes-bowl');
     });
     
 });

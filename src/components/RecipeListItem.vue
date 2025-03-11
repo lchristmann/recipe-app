@@ -1,18 +1,18 @@
 <script setup>
 import { computed } from 'vue';
-import { normalizeRecipeTitle } from '@/utils/stringUtils';
+import { makeKebabCase } from '@/utils/stringUtils';
 import { useRoute } from 'vue-router';
 
 const props = defineProps(['recipe', 'type', 'index']);
 
 const route = useRoute();
 
-const normalizedRecipeTitle = computed(() => normalizeRecipeTitle(props.recipe.title));
+const kebabCaseRecipeTitle = computed(() => makeKebabCase(props.recipe.title));
 </script>
 
 <template>
 
-    <router-link :to="{ name: 'recipe.show', params: { id: recipe.id, slug: normalizedRecipeTitle }, query: route.query }">
+    <router-link :to="{ name: 'recipe.show', params: { title: kebabCaseRecipeTitle }, query: route.query }">
         <div
             class="aspect-3/1 px-4 py-5 sm:p-6 relative isolate flex flex-col justify-end overflow-hidden rounded-xl shadow-sm cursor-pointer hover:opacity-75">
             <img v-if="props.recipe.hasImage" :src="props.recipe.imageUrl" alt="Bild von {{ props.recipe.title }}"
