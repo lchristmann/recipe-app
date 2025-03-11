@@ -3,6 +3,7 @@ import path from 'path';
 import { fileURLToPath } from 'url';
 import { CATEGORIES } from '../src/config/constants.js';
 import { recipeFileNameToTitle } from '../src/utils/stringUtils.js';
+import { shuffleArray } from '../src/utils/arrayUtils.js';
 
 // Define __dirname for ES modules
 const __filename = fileURLToPath(import.meta.url);
@@ -59,6 +60,9 @@ CATEGORIES.forEach(category => {
       console.error(`❌ [${category}/${file}] Error reading or parsing JSON:`, error.message);
     }
   });
+
+  // Shuffle the recipes array to alwayas bring some new variation on every deployment of the app
+  shuffleArray(aggregate);
 
   // Write the aggregate JSON file in the base recipes directory
   const outputFilePath = path.join(baseRecipesDir, `${category}.json`);

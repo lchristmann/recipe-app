@@ -188,7 +188,11 @@ plus
 
 ## 7. Development Roadmap
 
-- shuffle the recipes for the overviews randomly, so there's always some variation in the app
+- instead of fetching the potentially large aggregate JSON file in the RecipeView, just fetch the single recipe JSONs
+  - therefor have the `normalizeRecipeTitle()` with `recipeTitleToFilename()` -> käsekuchen instead of kaesekuchen, which is the filename (+.json)
+  - completely cut the usage of "normalizeRecipeTitle()" and develop my two new converter functions into a full, tested replacement
+  - have the same extra data that's produced into the aggregate files be written in the single recipe JSON files, too (hasImage, imageUrl)
+  -> just fetch that file in my RecipeView.vue component.
 
 ### 7.1. Ideas Playground
 

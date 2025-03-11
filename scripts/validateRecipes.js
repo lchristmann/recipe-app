@@ -11,7 +11,7 @@ const __dirname = path.dirname(__filename);
 const baseRecipesDir = path.join(__dirname, '..', 'src', 'assets', 'recipes');
 
 // Allowed keys in each recipe JSON
-const allowedKeys = ['labels', 'time', 'cost', 'ingredients', 'instructions'];
+const allowedKeys = ['labels', 'time', 'cost', 'ingredients', 'instructions', 'photoBy'];
 
 // Function to validate an individual recipe object
 function validateRecipe(recipe, fileName) {
