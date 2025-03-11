@@ -3,6 +3,9 @@ import path from 'path';
 import { fileURLToPath } from 'url';
 import { CATEGORIES } from '../src/config/constants.js';
 
+// This script creates a starting template JSON file for the given category and recipe name
+// Usage example: npm run create dessert/rezeptname
+
 // Define __dirname for ES modules
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);

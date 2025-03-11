@@ -9,7 +9,7 @@
     "generate": "npm run aggregate:recipes && npm run generate:labels-manifest",
     "clean:recipes": "node scripts/cleanRecipes.js",
     
-    "generate:recipe": "node scripts/generateRecipe.js",
+    "create": "node scripts/createRecipe.js",
     "show:missing-images": "node scripts/showMissingImages.js",
 
     "validate:recipes": "node scripts/validateRecipes.js",
