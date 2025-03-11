@@ -1,19 +1,19 @@
 {
-    "labels": [
-      "Obst"
-    ],
-    "time": 10,
-    "cost": 2,
-    "ingredients": [
-      "Bananen",
-      "Butter",
-      "Zucker",
-      "Zimt"
-    ],
-    "instructions": [
-      "Die Bananen schälen und in Scheiben schneiden.",
-      "Butter in einer Pfanne erhitzen und die Bananenscheiben darin goldbraun braten.",
-      "Mit Zucker und Zimt bestreuen und noch kurz karamellisieren lassen.",
-      "Heiß servieren, optional mit Vanilleeis oder Sahne."
-    ]
+  "labels": [
+    "Obst"
+  ],
+  "time": 10,
+  "cost": 2,
+  "ingredients": [
+    "Bananen",
+    "Butter",
+    "Zucker",
+    "Zimt"
+  ],
+  "instructions": [
+    "Die Bananen schälen und in Scheiben schneiden.",
+    "Butter in einer Pfanne erhitzen und die Bananenscheiben darin goldbraun braten.",
+    "Mit Zucker und Zimt bestreuen und noch kurz karamellisieren lassen.",
+    "Heiß servieren, optional mit Vanilleeis oder Sahne."
+  ]
 }

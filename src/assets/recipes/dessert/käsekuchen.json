@@ -1,19 +1,19 @@
 {
-    "labels": [
-      "Kuchen"
-    ],
-    "time": 15,
-    "cost": 1,
-    "ingredients": [
-      "1kg Quark",
-      "1 Zitrone",
-      "3 Eier",
-      "150g Zucker",
-      "150g Butter",
-      "1 Pckg Vanillepuddingpulver"
-    ],
-    "instructions": [
-      "Alles miteinander vermengen.",
-      "30 Minuten im Ofen bei 160° backen."
-    ]
+  "labels": [
+    "Kuchen"
+  ],
+  "time": 15,
+  "cost": 1,
+  "ingredients": [
+    "1kg Quark",
+    "1 Zitrone",
+    "3 Eier",
+    "150g Zucker",
+    "150g Butter",
+    "1 Pckg Vanillepuddingpulver"
+  ],
+  "instructions": [
+    "Alles miteinander vermengen.",
+    "30 Minuten im Ofen bei 160° backen."
+  ]
 }

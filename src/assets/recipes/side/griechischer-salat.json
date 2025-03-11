@@ -1,23 +1,23 @@
 {
-    "labels": [],
-    "time": 10,
-    "cost": 2,
-    "ingredients": [
-      "Gurken",
-      "Tomaten",
-      "Paprika",
-      "rote Zwiebel",
-      "Oliven",
-      "Feta",
-      "Olivenöl",
-      "Oregano",
-      "Salz",
-      "Pfeffer"
-    ],
-    "instructions": [
-      "Gurken, Tomaten, Paprika und Zwiebel in mundgerechte Stücke schneiden.",
-      "Oliven und Feta hinzufügen.",
-      "Mit Olivenöl, Oregano, Salz und Pfeffer würzen.",
-      "Alles gut vermengen und sofort servieren."
-    ]
+  "labels": [],
+  "time": 10,
+  "cost": 2,
+  "ingredients": [
+    "Gurken",
+    "Tomaten",
+    "Paprika",
+    "rote Zwiebel",
+    "Oliven",
+    "Feta",
+    "Olivenöl",
+    "Oregano",
+    "Salz",
+    "Pfeffer"
+  ],
+  "instructions": [
+    "Gurken, Tomaten, Paprika und Zwiebel in mundgerechte Stücke schneiden.",
+    "Oliven und Feta hinzufügen.",
+    "Mit Olivenöl, Oregano, Salz und Pfeffer würzen.",
+    "Alles gut vermengen und sofort servieren."
+  ]
 }

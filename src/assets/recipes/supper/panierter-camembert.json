@@ -1,24 +1,24 @@
 {
-    "labels": [
-      "Käse"
-    ],
-    "time": 15,
-    "cost": 3,
-    "ingredients": [
-      "Camembert",
-      "Ei",
-      "Sesam",
-      "Mohn",
-      "Sonnenblumenkerne",
-      "Stärke",
-      "Paniermehl",
-      "Brot zum Servieren"
-    ],
-    "instructions": [
-      "Den Camembert in dicke Scheiben schneiden.",
-      "In einer Schüssel Ei verquirlen und in einer weiteren Schüssel eine Mischung aus Sesam, Mohn, Sonnenblumenkernen, Stärke und Paniermehl vorbereiten.",
-      "Jede Camembert-Scheibe zuerst in Ei tauchen und dann in der Paniermehlmischung wenden.",
-      "In einer Pfanne mit etwas Öl von beiden Seiten goldbraun braten.",
-      "Mit frischem Brot servieren."
-    ]
+  "labels": [
+    "Käse"
+  ],
+  "time": 15,
+  "cost": 3,
+  "ingredients": [
+    "Camembert",
+    "Ei",
+    "Sesam",
+    "Mohn",
+    "Sonnenblumenkerne",
+    "Stärke",
+    "Paniermehl",
+    "Brot zum Servieren"
+  ],
+  "instructions": [
+    "Den Camembert in dicke Scheiben schneiden.",
+    "In einer Schüssel Ei verquirlen und in einer weiteren Schüssel eine Mischung aus Sesam, Mohn, Sonnenblumenkernen, Stärke und Paniermehl vorbereiten.",
+    "Jede Camembert-Scheibe zuerst in Ei tauchen und dann in der Paniermehlmischung wenden.",
+    "In einer Pfanne mit etwas Öl von beiden Seiten goldbraun braten.",
+    "Mit frischem Brot servieren."
+  ]
 }

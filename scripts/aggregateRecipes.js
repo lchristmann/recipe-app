@@ -34,7 +34,7 @@ CATEGORIES.forEach(category => {
     const filePath = path.join(categoryDir, file);
     try {
       const data = fs.readFileSync(filePath, 'utf8');
-      const recipe = JSON.parse(data);
+      let recipe = JSON.parse(data);
       
       // Compute a title from the file name
       const title = recipeFileNameToTitle(file);
@@ -43,8 +43,15 @@ CATEGORIES.forEach(category => {
       const imageFileName = file.replace(/\.json$/i, '.webp');
       const imagePath = path.join(categoryImagesDir, imageFileName);
       const hasImage = fs.existsSync(imagePath);
-      
-      // Build recipe object with only necessary fields
+      const imageUrl = `/images/${category}/${imageFileName}`;
+
+      // Update single recipe JSON file with new properties
+      recipe.id = idCounter;
+      recipe.hasImage = hasImage;
+      if (hasImage) recipe.imageUrl = imageUrl;
+      fs.writeFileSync(filePath, JSON.stringify(recipe, null, 2));
+
+      // Build recipe object with only necessary fields for aggregation
       const recipeData = {
         id: idCounter++,
         title,
@@ -53,7 +60,7 @@ CATEGORIES.forEach(category => {
         cost: recipe.cost,
         hasImage
       };
-      if (hasImage) recipeData.imageUrl = `/images/${category}/${imageFileName}`;
+      if (hasImage) recipeData.imageUrl = imageUrl;
 
       aggregate.push(recipeData);
     } catch (error) {
@@ -61,7 +68,7 @@ CATEGORIES.forEach(category => {
     }
   });
 
-  // Shuffle the recipes array to alwayas bring some new variation on every deployment of the app
+  // Shuffle the recipes array to always bring some new variation on every deployment of the app
   shuffleArray(aggregate);
 
   // Write the aggregate JSON file in the base recipes directory

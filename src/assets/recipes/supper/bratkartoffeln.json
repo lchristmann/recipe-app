@@ -1,24 +1,24 @@
 {
-    "labels": [
-      "Kartoffel"
-    ],
-    "time": 30,
-    "cost": 3,
-    "ingredients": [
-      "Kartoffeln",
-      "Zwiebel",
-      "Speckwürfel",
-      "Öl",
-      "Salz",
-      "Pfeffer",
-      "Paprika",
-      "Frische Petersilie"
-    ],
-    "instructions": [
-      "Kartoffeln schälen, in Scheiben schneiden und in einem Topf mit Wasser 10 Minuten vorkochen.",
-      "Die Zwiebel und den Speck anbraten, bis sie goldbraun sind.",
-      "Die vorgekochten Kartoffeln abtropfen lassen und in einer Pfanne mit Öl goldbraun braten.",
-      "Mit Salz, Pfeffer, Paprika und frischer Petersilie abschmecken.",
-      "Heiß servieren."
-    ]
+  "labels": [
+    "Kartoffel"
+  ],
+  "time": 30,
+  "cost": 3,
+  "ingredients": [
+    "Kartoffeln",
+    "Zwiebel",
+    "Speckwürfel",
+    "Öl",
+    "Salz",
+    "Pfeffer",
+    "Paprika",
+    "Frische Petersilie"
+  ],
+  "instructions": [
+    "Kartoffeln schälen, in Scheiben schneiden und in einem Topf mit Wasser 10 Minuten vorkochen.",
+    "Die Zwiebel und den Speck anbraten, bis sie goldbraun sind.",
+    "Die vorgekochten Kartoffeln abtropfen lassen und in einer Pfanne mit Öl goldbraun braten.",
+    "Mit Salz, Pfeffer, Paprika und frischer Petersilie abschmecken.",
+    "Heiß servieren."
+  ]
 }

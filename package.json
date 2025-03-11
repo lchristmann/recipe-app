@@ -3,10 +3,11 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "scripts": {   
+  "scripts": {
     "aggregate:recipes": "node scripts/aggregateRecipes.js",
     "generate:labels-manifest": "node scripts/generateLabelsManifest.js",
     "generate": "npm run aggregate:recipes && npm run generate:labels-manifest",
+    "clean:recipes": "node scripts/cleanRecipes.js",
     
     "generate:recipe": "node scripts/generateRecipe.js",
     "images:missing": "node scripts/findMissingImages.js",

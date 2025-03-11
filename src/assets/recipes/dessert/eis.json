@@ -1,11 +1,11 @@
 {
-    "labels": [],
-    "time": 0,
-    "cost": 3,
-    "ingredients": [
-      "Eiscreme (nach Wahl)"
-    ],
-    "instructions": [
-      "Das Eis nach Belieben servieren und genießen."
-    ]
+  "labels": [],
+  "time": 0,
+  "cost": 3,
+  "ingredients": [
+    "Eiscreme (nach Wahl)"
+  ],
+  "instructions": [
+    "Das Eis nach Belieben servieren und genießen."
+  ]
 }
