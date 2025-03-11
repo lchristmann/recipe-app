@@ -18,8 +18,10 @@ To suggest new recipes, send an e-mail to hello@lchristmann.com!
 - [3. Cloud Infrastructure](#3-cloud-infrastructure)
 - [4. Deployment (CI/CD Pipeline)](#4-deployment-cicd-pipeline)
 - [5. Negative SEO](#5-negative-seo)
-- [6. Content](#6-content)
-  - [6.1. Labels](#61-labels)
+- [6. App Content](#6-app-content)
+  - [6.1. Category Labels](#61-category-labels)
+- [7. Development Roadmap](#7-development-roadmap)
+  - [7.1. Ideas Playground](#71-ideas-playground)
 
 <br>
 
@@ -124,8 +126,8 @@ I defined two groups of execution: `npm run generate` and `npm run images:verify
 
 The [Vitest](https://vitest.dev/guide/) Unit Tests in the tests/unit folder can be run with `npm run test`.
 
-<br>
 
+<br>
 ## 3. Cloud Infrastructure
 
 The following diagram shows the [Amazon Web Services](https://aws.amazon.com) cloud infrastructure the site is running on.
@@ -160,11 +162,11 @@ Therefor they are discouraged from crawling and indexing it at all by
 
 <br>
 
-## 6. Content
+## 6. App Content
 
-### 6.1. Labels
+### 6.1. Category Labels
 
-Labels can be added invented arbitrarily for recipes, but here are some proposals, based on the main ingredients of dishes:
+Labels can be added arbitrarily to recipes, but here are some proposals, based on the main ingredients of dishes:
 
 - Kartoffel
 - Nudeln
@@ -181,3 +183,14 @@ Labels can be added invented arbitrarily for recipes, but here are some proposal
 plus
 
 - Kuchen
+
+<br>
+
+## 7. Development Roadmap
+
+- shuffle the recipes for the overviews randomly, so there's always some variation in the app
+
+### 7.1. Ideas Playground
+
+- have the whole recipes JSON data `src/assets/recipes` in the cloud only and develop a `recipe-app-manager` application in another repository, with which I can manage the recipes from anywhere
+  - I can create new recipe JSON files via the GitHub Mobile App already though, so it's not too bad already

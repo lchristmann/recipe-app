@@ -1,6 +1,8 @@
 import { describe, it, expect } from 'vitest';
 import { normalizeRecipeTitle } from '@/utils/stringUtils.js';
 import { normalizeQueryParam } from '@/utils/stringUtils.js';
+import { recipeFileNameToTitle } from '@/utils/stringUtils.js';
+import { recipeTitleToFileName } from '@/utils/stringUtils.js';
 
 describe('normalizeRecipeTitle', () => {
 
@@ -47,4 +49,36 @@ describe('normalizeQueryParam', () => {
         expect(normalizeQueryParam('Hülsenfrüchte')).toBe('huelsenfruechte');
     });
 
+});
+
+describe('recipeFileNameToTitle', () => {
+
+    it('converts a recipe JSON filename to the correct title', () => {
+        expect(recipeFileNameToTitle('gebratene-bananen.json')).toBe('Gebratene Bananen');
+    });
+    
+    it('converts a recipe JSON filename to the correct title', () => {
+        expect(recipeFileNameToTitle('käsekuchen.json')).toBe('Käsekuchen');
+    });
+
+    it('converts a recipe JSON filename to the correct title', () => {
+        expect(recipeFileNameToTitle('pommes-bowl.json')).toBe('Pommes Bowl');
+    });
+
+});
+
+describe('recipeTitleToFileName', () => {
+
+    it('converts a recipe title to the correct JSON filename', () => {
+        expect(recipeTitleToFileName('Gebratene Bananen')).toBe('gebratene-bananen');
+    });
+    
+    it('converts a recipe title to the correct JSON filename', () => {
+        expect(recipeTitleToFileName('Käsekuchen')).toBe('käsekuchen');
+    });
+
+    it('converts a recipe title to the correct JSON filename', () => {
+        expect(recipeTitleToFileName('Pommes Bowl')).toBe('pommes-bowl');
+    });
+    
 });

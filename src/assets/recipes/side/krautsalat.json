@@ -1,0 +1,21 @@
+{
+    "labels": [],
+    "time": 15,
+    "cost": 2,
+    "ingredients": [
+      "Weißkohl",
+      "Karotten",
+      "Apfelessig",
+      "Olivenöl",
+      "Senf",
+      "Zucker",
+      "Salz",
+      "Pfeffer"
+    ],
+    "instructions": [
+      "Weißkohl und Karotten fein schneiden oder raspeln.",
+      "In einer Schüssel mit Apfelessig, Olivenöl, Senf, Zucker, Salz und Pfeffer gut vermengen.",
+      "Den Salat mindestens 10 Minuten ziehen lassen, damit er schön durchzieht.",
+      "Vor dem Servieren nochmal gut durchmischen."
+    ]
+}

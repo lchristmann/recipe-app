@@ -1,0 +1,19 @@
+{
+    "labels": [
+      "Nudeln",
+      "Fleisch"
+    ],
+    "time": 15,
+    "cost": 2,
+    "ingredients": [
+      "Spagetthi",
+      "Hackfleisch",
+      "gehackte Tomaten / Tomatensoße",
+      "Parmesan (gerieben)"
+    ],
+    "instructions": [
+      "Nudeln kochen.",
+      "In der Pfanne Hackfleisch braten und dann mit gehackten Tomaten zu einer Soße kochen.",
+      "Wie im Bild mit Käse überstreut servieren."
+    ]
+}

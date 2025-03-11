@@ -1,0 +1,25 @@
+{
+    "labels": [
+      "Kartoffel",
+      "Käse"
+    ],
+    "time": 50,
+    "cost": 3,
+    "ingredients": [
+      "Kartoffeln",
+      "Sahne",
+      "Milch",
+      "Knoblauch",
+      "Muskatnuss",
+      "Salz",
+      "Pfeffer",
+      "Käse"
+    ],
+    "instructions": [
+      "Backofen auf 180°C Ober-/Unterhitze vorheizen.",
+      "Kartoffeln schälen und in dünne Scheiben schneiden.",
+      "Knoblauch fein hacken und mit Sahne und Milch vermengen. Mit Salz, Pfeffer und Muskatnuss würzen.",
+      "Kartoffelscheiben in eine Auflaufform schichten, die Sahne-Mischung darüber gießen und mit Käse bestreuen.",
+      "Für ca. 40 Minuten im Ofen backen, bis das Gratin goldbraun ist."
+    ]
+}

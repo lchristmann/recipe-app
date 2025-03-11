@@ -1,18 +1,13 @@
 <script setup>
 import RecipeLabels from '@/components/RecipeLabels.vue';
-import imagesManifest from '@/assets/imagesManifest.json';
-import { ref, computed, watchEffect } from 'vue';
+import { ref, watchEffect } from 'vue';
 import { useRoute, useRouter } from 'vue-router';
-import { normalizeRecipeTitle } from '@/utils/stringUtils';
+import { recipeTitleToFileName } from '@/utils/stringUtils';
 
 const route = useRoute();
 const router = useRouter();
 const recipe = ref(null);
-const availableImages = computed(() => new Set(imagesManifest[route.params.category]));
-const imageFileName = computed(() => {
-  return recipe.value ? normalizeRecipeTitle(recipe.value.title) + '.webp' : '';
-});
-const imageUrl = computed(() => `/images/${route.params.category}/${imageFileName.value}`);
+const recipeDetails = ref(null);
 
 watchEffect(async () => {
   const category = route.params.category;
@@ -24,12 +19,25 @@ watchEffect(async () => {
 
     // If no recipe was found, redirect to 404
     if (!recipe.value) {
-      router.push({ name: 'NotFound' }); // Assuming your 404 route is named 'not-found'
+      router.push({ name: 'NotFound' });
+      return;
     }
+
+    // Fetch the single recipe JSON file
+    try {
+      // Use a relative path or the absolute path to the asset
+      const recipeModule = await import(`../assets/recipes/${category}/${recipeTitleToFileName(recipe.value.title)}.json`);
+      recipeDetails.value = recipeModule.default;
+    } catch (error) {
+      console.error(`Error loading recipe details:`, error);
+      recipeDetails.value = null;
+    }
+
   } catch (error) {
     console.error(`Error loading recipe ${category}/${recipeId}:`, error);
     router.push({ name: 'NotFound' }); // Redirect to 404 on error as well
     recipe.value = null;
+    recipeDetails.value = null;
   }
 });
 </script>
@@ -43,7 +51,7 @@ watchEffect(async () => {
 
     <h1 class="text-3xl font-semibold tracking-tight text-pretty text-gray-900 sm:text-4xl">{{ recipe.title }}</h1>
 
-    <img v-if="availableImages.has(imageFileName)" :src="imageUrl" alt="Bild von {{ recipe.title }}"
+    <img v-if="recipe.hasImage" :src="recipe.imageUrl" alt="Bild von {{ recipe.title }}"
       class="aspect-2/1 inset-0 mt-4 h-full w-full object-cover rounded-xl">
 
     <div class="flex justify-between items-center mt-2 mx-1">
@@ -62,24 +70,24 @@ watchEffect(async () => {
         </div>
       </div>
 
-      <div v-if="availableImages.has(imageFileName)"
+      <div v-if="recipe.hasImage"
         class="block font-sans text-sm antialiased font-normal leading-normal text-right text-gray-500">
         <em>photo by {{ recipe.photoBy || "lchristmann" }}</em>
       </div>
 
     </div>
 
-    <div class="mt-4">
+    <div v-if="recipeDetails" class="mt-4">
       <h2 class="text-xl font-semibold text-gray-900">Zutaten</h2>
       <ul class="mt-2 list-disc list-inside text-gray-700">
-        <li v-for="(ingredient, index) in recipe.ingredients" :key="index">{{ ingredient }}</li>
+        <li v-for="(ingredient, index) in recipeDetails.ingredients" :key="index">{{ ingredient }}</li>
       </ul>
     </div>
 
-    <div class="mt-4">
+    <div v-if="recipeDetails" class="mt-4">
       <h2 class="text-xl font-semibold text-gray-900">Zubereitung</h2>
       <ol class="mt-2 list-decimal list-inside text-gray-700">
-        <li v-for="(step, index) in recipe.instructions" :key="index">{{ step }}</li>
+        <li v-for="(step, index) in recipeDetails.instructions" :key="index">{{ step }}</li>
       </ol>
     </div>
 

@@ -1,0 +1,18 @@
+{
+    "labels": [
+      "Gemüse"
+    ],
+    "time": 35,
+    "cost": 2,
+    "ingredients": [
+      "Zucchini",
+      "Paprika",
+      "Karotten",
+      "Kartoffeln",
+      "Olivenöl",
+      "Rosmarin"
+    ],
+    "instructions": [
+        "Einfach machen."
+    ]
+}

@@ -24,3 +24,20 @@ export function normalizeQueryParam(param) {
         .replace(/\W+/g, '-') // Replace non-word characters like whitespaces with '-'
         .replace(/^-+|-+$/g, ''); // Remove leading and trailing hyphens
 }
+
+// Convert a recipe JSON file name like "pommes-bowl.json" into a title "Pommes Bowl"
+export function recipeFileNameToTitle(fileName) {
+    // Remove the ".json" extension
+    const nameWithoutExt = fileName.replace(/\.json$/i, '');
+    // Split by hyphen
+    const words = nameWithoutExt.split('-');
+    // Capitalize each word
+    const capitalized = words.map(word => word.charAt(0).toUpperCase() + word.slice(1));
+    return capitalized.join(' ');
+}
+
+// Convert a recipe title like "Pommes Bowl" into its corresponding JSON file name like "pommes-bowl" (without the .json extension)
+export function recipeTitleToFileName(title) {
+    // Convert the title to lowercase and replace spaces with hyphens
+    return title.toLowerCase().replace(/\s+/g, '-');
+}

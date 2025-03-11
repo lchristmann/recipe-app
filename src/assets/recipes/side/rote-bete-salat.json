@@ -1,0 +1,22 @@
+{
+    "labels": [],
+    "time": 15,
+    "cost": 3,
+    "ingredients": [
+      "Rote Bete (gekocht)",
+      "Zwiebel",
+      "Apfel",
+      "Walnüsse",
+      "Olivenöl",
+      "Balsamico-Essig",
+      "Salz",
+      "Pfeffer"
+    ],
+    "instructions": [
+      "Die gekochte Rote Bete schälen und in Würfel schneiden.",
+      "Zwiebel und Apfel ebenfalls in kleine Stücke schneiden.",
+      "Alles in einer Schüssel anrichten und mit Walnüssen bestreuen.",
+      "Mit Olivenöl, Balsamico-Essig, Salz und Pfeffer würzen.",
+      "Gut vermengen und servieren."
+    ]
+}

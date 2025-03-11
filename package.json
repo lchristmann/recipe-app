@@ -3,18 +3,16 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "scripts": {
-    "generate:recipe-ids": "node scripts/generateRecipeIds.js",
-    "generate:images-manifest": "node scripts/generateImagesManifest.js",
+  "scripts": {   
+    "aggregate:recipes": "node scripts/aggregateRecipes.js",
     "generate:labels-manifest": "node scripts/generateLabelsManifest.js",
-    "generate": "npm run generate:recipe-ids && npm run generate:images-manifest && npm run generate:labels-manifest",
+    "generate": "npm run aggregate:recipes && npm run generate:labels-manifest",
     
-    "clean:recipe-ids": "node scripts/removeRecipeIds.js",
-
+    "generate:recipe": "node scripts/generateRecipe.js",
     "images:missing": "node scripts/findMissingImages.js",
-    "images:verify:association": "node scripts/verifyExistingImagesAssociation.js",
-    "images:verify:format": "node scripts/verifyExistingImagesFormat.js",
-    "images:verify": "npm run images:verify:association && npm run images:verify:format",
+
+    "validate:recipes": "node scripts/validateRecipes.js",
+    "validate:images": "node scripts/validateImages.js",
 
     "dev": "npm run generate && vite",
     "build": "npm run generate && vite build",

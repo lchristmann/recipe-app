@@ -1,0 +1,22 @@
+{
+    "labels": [],
+    "time": 5,
+    "cost": 1,
+    "ingredients": [
+      "Blattsalate (z. B. Kopfsalat, Rucola)",
+      "Tomaten",
+      "Gurken",
+      "Paprika",
+      "Karotten",
+      "Olivenöl",
+      "Balsamico-Essig",
+      "Salz",
+      "Pfeffer"
+    ],
+    "instructions": [
+      "Blattsalate waschen und in eine Schüssel geben.",
+      "Tomaten, Gurken, Paprika und Karotten in kleine Stücke schneiden und hinzufügen.",
+      "Mit Olivenöl, Balsamico-Essig, Salz und Pfeffer abschmecken.",
+      "Gut vermengen und servieren."
+    ]
+}

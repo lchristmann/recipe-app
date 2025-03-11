@@ -1,0 +1,22 @@
+{
+    "labels": [
+      "Reis"
+    ],
+    "time": 25,
+    "cost": 2,
+    "ingredients": [
+      "Milch",
+      "Reis",
+      "Zucker",
+      "Vanillezucker",
+      "Zimt",
+      "Butter"
+    ],
+    "instructions": [
+      "Milch in einem Topf erhitzen, aber nicht zum Kochen bringen.",
+      "Den Reis in die Milch geben und bei niedriger Hitze ca. 20 Minuten köcheln lassen.",
+      "Zucker und Vanillezucker hinzufügen und gut umrühren.",
+      "Mit Zimt bestreuen und einen Löffel Butter hinzufügen.",
+      "In Schalen anrichten und servieren."
+    ]
+}

@@ -2,7 +2,6 @@
 import { ref, computed, watch, watchEffect } from 'vue';
 import { useRoute } from 'vue-router';
 import RecipeListItem from '@/components/RecipeListItem.vue';
-import imagesManifest from '@/assets/imagesManifest.json';
 import { normalizeQueryParam, normalizeRecipeTitle } from '@/utils/stringUtils';
 
 const route = useRoute();
@@ -12,7 +11,6 @@ const filterLabel = ref(route.query.label || ''); // Initialize with query param
 const searchKeyword = ref(route.query.search || ''); // Initialize with query params if available
 
 const recipes = ref([]);
-const availableImages = ref(new Set()); // Store valid image filenames
 
 watchEffect(async () => {
     const category = route.params.category;
@@ -20,11 +18,9 @@ watchEffect(async () => {
     try {
         const module = await import(`@/assets/recipes/${category}.json`);
         recipes.value = module.default;
-        availableImages.value = new Set(imagesManifest[category])
     } catch (error) {
         console.error(`Error loading recipes for ${category}:`, error);
         recipes.value = [];
-        availableImages.value = new Set();
     }
 });
 
@@ -49,8 +45,7 @@ const filteredRecipes = computed(() => {
 
     <ul role="list" class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
 
-        <RecipeListItem v-for="(recipe, index) in filteredRecipes" :key="index" :index="index" :recipe="recipe"
-            :type="route.params.category" :availableImages="availableImages" />
+        <RecipeListItem v-for="(recipe, index) in filteredRecipes" :key="index" :index="index" :recipe="recipe" :type="route.params.category" />
 
     </ul>
 
